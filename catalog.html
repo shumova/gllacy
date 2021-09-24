@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Глейси</title>
+  </head>
+  <body class="page">
+    <header class="page__header">
+      <nav class="page__navigation">
+        <!-- блок logo -->
+        <a class="logo"> <!-- href не использую, т.к. мы на главной странице-->
+          <img class="logo__img" src="" alt="Gllacy Shop">
+        </a>
+        <!-- блок site-menu -->
+        <ul class="site-menu">
+          <li class="site-menu__item">
+            <!-- оставила ссылку с href, чтобы можно было обновить страницу каталога -->
+            <a class="site-menu__link site-menu__link--current" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">Доставка и&nbsp;оплата</a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">О&nbsp;компании</a>
+          </li>
+        </ul>
+        <!-- блок phone -->
+        <a class="phone" href="tel:+78005558628">+7 800 555-86-28</a>
+        <!-- блок button -->
+        <button class="button" type="button">
+          <span class="visually-hidden">Поиск по сайту</span>
+        </button>
+        <!-- блок user-menu -->
+        <ul class="user-menu">
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="#">Вход</a>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="#">
+              <span class="visually-hidden">Корзина</span>
+              2&nbsp;Товара
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main-inner">
+      <h1 class="page__title">Сливочное мороженое</h1>
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="index.html">Главная</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link">Сливочное</a>
+        </li>
+      </ul>
+      <section class="catalog">
+        <h2 class="visually-hidden">Фильтры и каталог сливочного мороженого</h2>
+
+      </section>
+    </main>
+    <footer class="page__footer">
+      <ul class="social">
+        <li class="social__item">
+          <a class="social__link" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">Вконтакте</span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://www.facebook.com/htmlacademy">
+            <span class="visually-hidden">Facebook</span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://www.instagram.com/htmlacademy/">
+            <span class="visually-hidden">Instagram</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="commerce">
+        <li class="commerce__item">
+          <a class="commerce__link" href="#">Для поставщиков</a>
+        </li>
+        <li class="commerce__item">
+          <a class="commerce__link" href="#">О&nbsp;производстве</a>
+        </li>
+        <li class="commerce__item">
+          <a class="commerce__link" href="#">Наши документы</a>
+        </li>
+        <li class="commerce__item">
+          <a class="commerce__link" href="#">Экологические стандарты</a>
+        </li>
+      </ul>
+      <a class="partner-logo" href="https://htmlacademy.ru/">
+        <img class="partner-logo__img" src="" alt="HTML Academy">
+      </a>
+      <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
+    </footer>
+  </body>
+</html>
