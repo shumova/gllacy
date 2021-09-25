@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Gllacy | Джелатерия</title>
+  </head>
+  <body class="page">
+    <header class="page__header page-header">
+      <nav class="page-header__navigation">
+        <a class="page-header__logo logo"> <!-- href не использую, т.к. мы на главной странице-->
+          <img class="logo__img" src="#" alt="Gllacy Shop">
+        </a>
+        <ul class="page-header__site-menu site-menu">
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">Доставка и&nbsp;оплата</a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">О&nbsp;компании</a>
+          </li>
+        </ul>
+        <a class="page-header__phone phone" href="tel:+78005558628">+7 800 555-86-28</a>
+        <button class="button" type="button">
+          <span class="visually-hidden">Поиск по сайту.</span>
+        </button>
+        <ul class="page-header__user-menu user-menu">
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="#">Вход</a>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="#">
+              <span class="visually-hidden">Корзина.</span>
+              Пусто
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main">
+      <h1 class="visually-hidden">Главная страница джелатерии Gllacy Shop.</h1>
+      <div class="carousel">
+        <!-- слайдер -->
+        <ul class="carousel__list">
+          <!-- первый слайд -->
+          <li class="carousel__item">
+            <figure class="carousel__slide carousel__slide--current">
+              <figcaption class="carousel__offer offer">
+                  <!-- заголовки старалась не типографировать, но здесь, мне кажется, польза для вёрстки превышает возможный риск выдачи в поисковике -->
+                  <h2 class="offer__title">Нежный пломбир с&nbsp;клубничным джемом</h2>
+                  <p class="offer__text-unit">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
+                  <a class="button" href="#">Заказать</a>
+              </figcaption>
+              <img class="slider__img slider__img--current product-img" src="#" alt="Вафельный рожок с шариками клубничного и ванильного мороженого, политого густым клубничным джемом.">
+            </figure>
+          </li>
+          <!-- второй слайд -->
+          <li class="carousel__item">
+            <figure class="carousel__slide carousel__slide--current">
+              <figcaption class="carousel__offer offer">
+                <h2 class="offer__title">Сливочное мороженое со&nbsp;вкусом банана</h2>
+                <p class="offer__text-unit">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</p>
+                <a class="button" href="#">Заказать</a>
+              </figcaption>
+              <img class="slider__img product-img" src="#" alt="Вафельный рожок с тремя шариками ванильно-бананого мороженого нежно-жёлтого оттенка.">
+            </figure>
+          </li>
+          <!-- третий слайд -->
+          <li class="carousel__item">
+            <figure class="carousel__slide carousel__slide--current">
+              <figcaption class="carousel__offer offer">
+                <h2 class="offer__title">Карамельный пломбир с&nbsp;маршмеллоу</h2>
+                <p class="offer__text-unit">Необычный сладкий дессерт с&nbsp;карамельный топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
+                <a class="button" href="#">Заказать</a>
+              </figcaption>
+              <img class="slider__img product-img" src="#" alt="Вафельный рожок с четырьмя шариками сливочно-карамельного мороженого, посыпанный маршмеллоу.">
+            </figure>
+          </li>
+        </ul>
+        <button class="button carousel__control carousel__control--prev" type="button">
+          <span class="visually-hidden">Предыдущий слайд.</span>
+        </button>
+        <button class="button carousel__control carousel__control--next" type="button">
+          <span class="visually-hidden">Следующий слайд.</span>
+        </button>
+        <!-- pagination -->
+        <ol class="carousel__pagination pagination">
+          <li class="pagination__item">
+            <button class="button button--current" type="button">
+              <span class="visually-hidden">Первый слайд.</span>
+            </button>
+          </li>
+          <li class="pagination__item">
+            <button class="button" type="button">
+              <span class="visually-hidden">Второй слайд.</span>
+            </button>
+          </li>
+          <li class="pagination__item">
+            <button class="button" type="button">
+              <span class="visually-hidden">Третий слайд.</span>
+            </button>
+          </li>
+        </ol>
+        <!-- social -->
+        <ul class="social">
+          <li class="social__item">
+            <a class="social__link" href="https://vk.com/htmlacademy">
+              <span class="visually-hidden">Вконтакте.</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link" href="https://www.facebook.com/htmlacademy">
+              <span class="visually-hidden">Facebook.</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link" href="https://www.instagram.com/htmlacademy/">
+              <span class="visually-hidden">Instagram.</span>
+            </a>
+          </li>
+        </ul>
+      </div> <!-- закрывает carousel-->
+      <section class="feature">
+        <h2 class="feature__title">Заказывайте мороженое и получайте подарки!</h2>
+        <!-- изображения, на мой взгляд, можно вставить через background -->
+        <div class="feature__content">
+          <!-- блоки ниже article, т.к., думаю, я могла бы представить их отдельно от сайта, например, в качестве контекстной рекламы -->
+          <article class="feature__card feature-card">
+            <div class="feature-card__offer offer">
+              <h3 class="offer__title">Малинка даром!</h3>
+              <p class="offer__text-unit">При покупке 2&nbsp;кг любого фруктового мороженого, добавим в&nbsp;ваш заказ банку малинового варенья бесплатно.</p>
+              <a class="button" href="#">Хочу подарок</a>
+            </div>
+          </article>
+          <article class="feature__card feature-card">
+            <div class="feature-card__offer offer">
+              <h3 class="offer__title">Маршмеллоу даром!</h3>
+              <p class="offer__text-unit">При покупке 2&nbsp;кг пломбира, добавим в&nbsp;ваш заказ упаковку нежных зефирок совершенно бесплатно.</p>
+              <a class="button" href="#">Хочу подарок</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="feature">
+        <h2 class="feature__title">Попробуйте самые популярные вкусы нашего мороженого</h2>
+        <div class="feature__content">
+         <!-- оставила пустой alt у img т.к. рядом есть описания -->
+          <ul class="product-list">
+            <li class="product-list__item product-card">
+              <h3 class="product-card__title">Малинка</h3>
+              <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
+              <b class="product-card__price">310&nbsp;₽/кг</b>
+              <button class="product-card__button button" type="button">
+                <span class="visually-hidden">В корзину.</span>
+              </button>
+              <img class="product-card__img" src="#" alt="">
+            </li>
+            <li class="product-list__item product-card">
+              <h3 class="product-card__title">Фисташка</h3>
+              <p class="product-card__description">Фисташковый пломбир с&nbsp;кусочками шоколада</p>
+              <b class="product-card__price">340&nbsp;₽/кг</b>
+              <button class="product-card__button button" type="button">
+                <span class="visually-hidden">В корзину.</span>
+              </button>
+              <img class="product-card__img" src="#" alt="">
+            </li>
+            <li class="product-list__item product-card">
+              <h3 class="product-card__title">Черника</h3>
+              <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
+              <b class="product-card__price">330&nbsp;₽/кг</b>
+              <button class="product-card__button button" type="button">
+                <span class="visually-hidden">В корзину.</span>
+              </button>
+              <img class="product-card__img" src="#" alt="">
+            </li>
+            <li class="product-list__item product-card">
+              <h3 class="product-card__title">Бабл-гам</h3>
+              <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
+              <b class="product-card__price">320&nbsp;₽/кг</b>
+              <button class="product-card__button button" type="button">
+                <span class="visually-hidden">В корзину.</span>
+              </button>
+              <img class="product-card__img" src="#" alt="">
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="feature feature--accent">
+        <h2 class="feature__title">Магазин Глэйси – это онлайн и офлайн-магазин по продаже мороженого собственного проиводства на развес</h2>
+        <div class="feature__content">
+          <ul class="feature__list">
+            <li class="feature__item">
+              <p class="feature__text-unit">Все наше мороженое изгатавливается на&nbsp;собственном производстве, с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</p>
+            </li>
+            <li class="feature__item">
+              <p class="feature__text-unit">Закупка ингредиентов производится только у&nbsp;проверенных фермерских хозяйств, с&nbsp;которыми нас связывает долговременное сотрудничество.</p>
+            </li>
+            <li class="feature__item">
+              <p class="feature__text-unit">Для приготовления мороженого используются сливки и&nbsp;молоко высочайшего качества. Все ингредиенты и&nbsp;добавки произведены из&nbsp;натурального сырья.</p>
+            </li>
+            <li class="feature__item">
+              <p class="feature__text-unit">Доставка нашего мороженого осуществляется в&nbsp;специальном термопаке, который не&nbsp;дает мороженому растаять и&nbsp;позволяет сохранить превосходный вкус.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <aside class="feature">
+        <div class="feature__content">
+          <section class="feature__card ad-card">
+            <a class="ad-card__link" href="#">
+              <h3 class="ad-card__title">10 способов сервировки фруктовых щербетов к столу</h3>
+            </a>
+            <p class="ad-card__note">Новое в&nbsp;нашем блоге</p>
+          </section>
+          <section class="feature__card">
+            <h3 class="visually-hidden">Новостная рассылка.</h3>
+            <div class="deal-card deal-card--accent">
+              <p class="deal-card__text-unit">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
+              <form class="deal-card__form subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
+                <p class="subscribe-form__email">
+                 <label class="visually-hidden" for="subscribe-email">Введите свой email.</label>
+                  <input class="subscribe-form__field" placeholder="email@example.com" type="email" name="subscribe-email" id="subscribe-email" required>
+                </p>
+                <button class="button" type="submit">Отправить</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </aside>
+      <section class="feature feature--pictorial feature--delivery">
+        <div class="feature__content">
+          <div class="offer">
+            <h2 class="offer__title">Доставка любимого мороженого на дом</h2>
+            <p class="offer__text-unit">Хочется полакомиться любимым дессертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом и&nbsp;курьер привезет вам ваш заказ в&nbsp;течение часа!</p>
+          </div>
+          <div class="deal-card">
+            <p class="deal-card__text-unit">Укажите адрес и&nbsp;дату доставки, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заказ.</p>
+            <form class="deal-card__form order-form" action="https://echo.htmlacademy.ru/" method="post">
+              <p class="order-form__date">
+                <label class="order-form__label" for="order-date">Дата</label>
+                <button class="order-form__info" type="button">
+                  <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
+                </button>
+                <input class="order-form__field" placeholder="01.04.2020" type="text" name="order-date" id="order-date" required>
+              </p>
+              <p class="order-form__phone">
+                <label class="order-form__label" for="order-phone">Телефон</label>
+                <button class="order-form__info" type="button">
+                  <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
+                </button>
+                <input class="order-form__field" placeholder="+7 800 999-00-00" type="text" name="order-phone" id="order-phone" required>
+              </p>
+              <p class="order-form__address">
+                <label class="order-form__label" for="order-address">Адрес</label>
+                <button class="order-form__info" type="button">
+                  <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
+                </button>
+                <input class="order-form__field" placeholder="ул. Большая Конюшенная, 19/8" type="text" name="order-address" id="order-address" required>
+              </p>
+              <button class="button" type="submit">Отправить</button>
+            </form>
+           </div>
+        </div>
+      </section>
+      <section class="feature feature--pictorial feature--contacts">
+        <h2 class="visually-hidden">Контакты.</h2>
+        <div class="feature__content">
+          <div class="deal-card">
+            <address class="deal-card__address">
+              <dl class="deal-card__text">
+                <dt class="deal-card__text-unit">Адрес главного офиса и&nbsp;офлайн-магазина:</dt>
+                <dd class="deal-card__text-unit">
+                  <b>наб. Реки Карповки, 5 лит П, Санкт-Петербург</b>
+                </dd>
+                <dt class="deal-card__text-unit">Для заказов по&nbsp;телефону:</dt>
+                <dd class="deal-card__text-unit">
+                  <a class="deal-card__phone phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+                  <span>(с&nbsp;10&nbsp;до&nbsp;20&nbsp;ежедневно)</span>
+                </dd>
+              </dl>
+            </address>
+            <button class="button" type="button">Форма обратной связи</button>
+          </div>
+        </div>
+       </section>
+    </main>
+    <footer class="page__footer">
+      <ul class="social">
+        <li class="social__item">
+          <a class="social__link" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">Вконтакте.</span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://www.facebook.com/htmlacademy">
+            <span class="visually-hidden">Facebook.</span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://www.instagram.com/htmlacademy/">
+            <span class="visually-hidden">Instagram</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="commerce">
+        <li class="commerce__item">
+          <a class="commerce__link" href="#">Для поставщиков</a>
+        </li>
+        <li class="commerce__item">
+          <a class="commerce__link" href="#">Наши документы</a>
+        </li>
+        <li class="commerce__item">
+          <a class="commerce__link" href="#">О&nbsp;производстве</a>
+        </li>
+        <li class="commerce__item">
+          <a class="commerce__link" href="#">Экологические стандарты</a>
+        </li>
+      </ul>
+      <a class="partner-logo" href="https://htmlacademy.ru/">
+        <img class="partner-logo__img" src="#" alt="HTML Academy">
+      </a>
+      <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
+    </footer>
+  </body>
+</html>
