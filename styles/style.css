@@ -1,0 +1,165 @@
+.page {
+  background-color: #FEAFC3;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* button */
+
+.button--search {
+  background-image: url("../img/icons/search.svg");
+}
+
+.button--light {
+  background-color: #FFCBD8;
+}
+
+.button--bright {
+  background-color: #FF2F64;
+}
+
+.button__icon--dark {
+  fill: #2D3440;
+}
+
+.button__icon--light {
+  fill: #FCFCFC;
+}
+
+/* social */
+
+.social__link {
+  display: flex;
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+}
+
+.social__link--vk {
+  background-image: url("../img/icons/vk.svg");
+}
+
+.social__link--facebook {
+  background-image: url("../img/icons/facebook.svg");
+}
+
+.social__link--instagram {
+  background-image: url("../img/icons/instagram.svg");
+}
+
+/* feature */
+
+/* feature--accent */
+
+.feature--accent {
+  background-image: url("../img/pattern@1x.jpg");
+  background-size: 144px 73px;
+}
+
+/* ad-card: элемент анонсов/промо/объявлений */
+
+.ad-card {
+  width: 570px;
+  height: 268px;
+}
+
+.ad-card--option-1 {
+  background-image: url("../img/free_raspberry@1x.jpg");
+  background-repeat: no-repeat;
+}
+
+.ad-card--option-2 {
+  background-image: url("../img/free_marshmallow@1x.jpg");
+  background-repeat: no-repeat;
+}
+
+/* feature: текстовые элементы */
+
+.feature__text-unit::before {
+  content: "";
+
+  display: block;
+  width: 48px;
+  height: 48px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #2D3440;
+	border-radius: 50%;
+}
+
+.feature__text-unit--item-1::before {
+  background-image: url("../img/icons/eskimo.svg");
+}
+
+.feature__text-unit--item-2::before {
+  background-image: url("../img/icons/cow.svg");
+}
+
+.feature__text-unit--item-3::before {
+  background-image: url("../img/icons/leaf.svg");
+}
+
+.feature__text-unit--item-4::before {
+  background-image: url("../img/icons/thermometer.svg");
+}
+
+
+/* feature-card: элемент статей/постов/aside-информации */
+.feature-card {
+  width: 570px;
+  height: 216px;
+}
+
+.feature-card--post-1 {
+  background-image: url("../img/fruit_sorbet@1x.jpg");
+  background-repeat: no-repeat;
+}
+
+/* deal-card: блок для форм/контактов, обеспечивающих взаимодействие с клиентом */
+
+.deal-card--accent {
+  width: 570px;
+  height: 216px;
+  background-image: url("../img/linear-pattern@1x.jpg");
+}
+
+.feature--delivery {
+  width: 1170px;
+  height: 534px;
+  background-image: url("../img/assorted@1x.jpg");
+  background-repeat: no-repeat;
+}
+
+.feature--contacts {
+  width: 1170px;
+  height: 492px;
+  background-image: url("../img/icecream_cones@1x.jpg");
+  background-repeat: no-repeat;
+}
+
+/* footer */
+
+.commerce__link--favor::before {
+  content: "";
+
+  display: block;
+  width: 14px;
+  height: 13px;
+
+  background-image: url("../img/icons/heart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+

@@ -2,13 +2,23 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+
+    <meta name="theme-color" content="#FCFCFC">
+    <meta name="keywords" content="сливочное мороженое, каталог сливочного мороженого">
+    <meta name="description" content="Каталог сливочного мороженого Gllacy shop: мороженое собственного производства с доставкой на дом.">
+    <meta name="robots" content="index,follow">
+
+    <link rel="stylesheet" href="styles/style.css">
+
     <title>Gllacy | Каталог</title>
   </head>
   <body class="page">
     <header class="page__header page-header">
       <nav class="page-header__navigation">
         <a class="page-header__logo logo" href="index.html">
-          <img class="logo__img" src="#" alt="Gllacy Shop">
+          <img class="logo__img" src="img/logo.svg" alt="Gllacy Shop" width="137" height="56">
         </a>
         <ul class="page-header__site-menu site-menu">
           <li class="site-menu__item">
@@ -22,16 +32,25 @@
           </li>
         </ul>
         <a class="page-header__phone phone" href="tel:+78005558628">+7 800 555-86-28</a>
-        <button class="button" type="button">
-          <span class="visually-hidden">Поиск по сайту.</span>
+        <button class="button button--iconic button--light" type="button">
+          <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Поиск по сайту.">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.91286 7.24625C1.91286 4.30073 4.30068 1.91292 7.2462 1.91292C10.1917 1.91292 12.5795 4.30073 12.5795 7.24625C12.5795 8.68547 12.0095 9.99154 11.0828 10.951C11.0582 10.9695 11.0346 10.99 11.0123 11.0124C10.9899 11.0347 10.9694 11.0583 10.9509 11.0829C9.99146 12.0095 8.6854 12.5796 7.2462 12.5796C4.30068 12.5796 1.91286 10.1918 1.91286 7.24625ZM11.4653 12.4082C10.3161 13.3487 8.84703 13.9129 7.2462 13.9129C3.5643 13.9129 0.579529 10.9281 0.579529 7.24625C0.579529 3.56435 3.5643 0.579582 7.2462 0.579582C10.9281 0.579582 13.9129 3.56435 13.9129 7.24625C13.9129 8.84711 13.3486 10.3162 12.4081 11.4654L15.2176 14.2749C15.4779 14.5352 15.4779 14.9573 15.2176 15.2177C14.9572 15.478 14.5351 15.478 14.2748 15.2177L11.4653 12.4082Z"/>
+          </svg>
         </button>
         <ul class="page-header__user-menu user-menu">
           <li class="user-menu__item">
-            <a class="user-menu__link" href="#">Вход</a>
+            <a class="user-menu__link button button--iconic button--light" href="#">
+              <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Личный кабинет.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.2.87c0-.36.3-.66.68-.66h3a2.17 2.17 0 012.16 2.17v10.5a2.17 2.17 0 01-2.16 2.16h-3a.67.67 0 010-1.33h3a.83.83 0 00.83-.84V2.38a.83.83 0 00-.84-.83h-3a.67.67 0 01-.66-.67zM5.66 3.4a.67.67 0 01.95 0l3.74 3.75a.66.66 0 010 .95L6.6 11.85a.67.67 0 11-.95-.95l2.62-2.6H.87a.67.67 0 010-1.34h7.4L5.65 4.35a.67.67 0 010-.95z"/>
+              </svg>
+              Вход
+            </a>
           </li>
           <li class="user-menu__item">
-            <a class="user-menu__link" href="#">
-              <span class="visually-hidden">Корзина.</span>
+            <a class="user-menu__link button button--iconic button--light" href="#">
+              <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Корзина.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
               2&nbsp;Товара
             </a>
           </li>
@@ -166,113 +185,173 @@
             <h3 class="product-card__title">Малинка</h3>
             <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
             <b class="product-card__price">310&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/raspberry@1x.webp 1x, img/product/raspberry@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/raspberry@1x.png" srcset="img/product/raspberry@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Фисташка</h3>
             <p class="product-card__description">Фисташковый пломбир с&nbsp;кусочками шоколада</p>
             <b class="product-card__price">340&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/pistachio@1x.webp 1x, img/product/pistachio@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/pistachio@1x.png" srcset="img/product/pistachio@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Черника</h3>
             <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
             <b class="product-card__price">330&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/blueberry@1x.webp 1x, img/product/blueberry@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/blueberry@1x.png" srcset="img/product/blueberry@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Бабл-гам</h3>
             <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
             <b class="product-card__price">320&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/bubble@1x.webp 1x, img/product/bubble@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/bubble@1x.png" srcset="img/product/bubble@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Ежевика</h3>
             <p class="product-card__description">Сливочное мороженое с&nbsp;ежевичным джемом</p>
             <b class="product-card__price">330&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/blackberry@1x.webp 1x, img/product/blackberry@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/blackberry@1x.png" srcset="img/product/blackberry@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Банан</h3>
             <p class="product-card__description">Сливочный пломбир с&nbsp;банановым вкусом</p>
             <b class="product-card__price">340&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/banana@1x.webp 1x, img/product/banana@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/banana@1x.png" srcset="img/product/banana@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Шоколадка</h3>
             <p class="product-card__description">Классический шоколадный пломбир</p>
             <b class="product-card__price">270&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/chocolate@1x.webp 1x, img/product/chocolate@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/chocolate@1x.png" srcset="img/product/chocolate@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Клубничка</h3>
             <p class="product-card__description">Сливочный пломбир с&nbsp;клубничным вкусом</p>
             <b class="product-card__price">300&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/strawberry@1x.webp 1x, img/product/strawberry@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/strawberry@1x.png" srcset="img/product/strawberry@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Лимон</h3>
             <p class="product-card__description">Освежающий лимонный сорбет</p>
             <b class="product-card__price">310&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/lemon@1x.webp 1x, img/product/lemon@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/lemon@1x.png" srcset="img/product/lemon@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Ментол</h3>
             <p class="product-card__description">Сливочный пломбир с&nbsp;ментоловым сиропом</p>
             <b class="product-card__price">320&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/mentol@1x.webp 1x, img/product/mentol@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/mentol@1x.png" srcset="img/product/mentol@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Орешек</h3>
             <p class="product-card__description">Фисташковый пломбир с&nbsp;шоколадным сиропом</p>
             <b class="product-card__price">360&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/nut@1x.webp 1x, img/product/nut@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/nut@1x.png" srcset="img/product/nut@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Крем-брюле</h3>
             <p class="product-card__description">Классическое крем-брюле </p>
             <b class="product-card__price">280&nbsp;₽/кг</b>
-            <button class="product-card__button button" type="button">
-              <span class="visually-hidden">В корзину.</span>
+            <button class="product-card__button button button--iconic button--bright" type="button">
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Добавить в корзину.">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
             </button>
-            <img class="product-card__img" src="#" alt="">
+            <picture>
+              <source srcset="img/product/caramel_cream@1x.webp 1x, img/product/caramel_cream@2x.webp 2x" type="image/webp">
+              <img class="product-card__img" src="img/product/caramel_cream@1x.png" srcset="img/product/caramel_cream@2x.png 2x" width="168" height="168" alt="">
+            </picture>
           </li>
         </ul>
         <button class="button" type="button">Показать ещё</button>
-        <ul class="catalog__pagination pagintaion">
+        <ul class="catalog__pagination pagination">
           <li class="pagination__item">
             <a class="pagination__link pagination__link--current">1</a>
           </li>
@@ -297,26 +376,29 @@
       </section>
     </main>
     <footer class="page__footer">
-      <ul class="social">
-        <li class="social__item">
-          <a class="social__link" href="https://vk.com/htmlacademy">
-            <span class="visually-hidden">Вконтакте.</span>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link" href="https://www.facebook.com/htmlacademy">
-            <span class="visually-hidden">Facebook.</span>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link" href="https://www.instagram.com/htmlacademy/">
-            <span class="visually-hidden">Instagram.</span>
-          </a>
-        </li>
-      </ul>
+        <!-- social -->
+        <ul class="social">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="https://vk.com/htmlacademy">
+              <span class="visually-hidden">Вконтакте.</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+              <span class="visually-hidden">Facebook.</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy/">
+              <span class="visually-hidden">Instagram.</span>
+            </a>
+          </li>
+        </ul>
       <ul class="commerce">
         <li class="commerce__item">
-          <a class="commerce__link" href="#">Для поставщиков</a>
+          <a class="commerce__link commerce__link--favor" href="#">
+            <b>Для поставщиков</b>
+          </a>
         </li>
         <li class="commerce__item">
           <a class="commerce__link" href="#">О&nbsp;производстве</a>
@@ -329,7 +411,7 @@
         </li>
       </ul>
       <a class="partner-logo" href="https://htmlacademy.ru/">
-        <img class="partner-logo__img" src="#" alt="HTML Academy">
+        <img class="partner-logo__img" src="img/logo_htmlacademy.svg" alt="HTML Academy" width="93" height="27">
       </a>
       <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
     </footer>
