@@ -1,4 +1,40 @@
+/* inter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-latin_cyrillic-400.woff2") format("woff2"),
+       url("../fonts/inter-latin_cyrillic-400.woff") format("woff");
+}
+/* inter-700 - cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-cyrillic-700.woff2") format("woff2"),
+       url("../fonts/inter-cyrillic-700.woff") format("woff");
+  font-display: swap;
+}
+/* inter-900 - cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/inter-cyrillic-900.woff2") format("woff2"),
+       url("../fonts/inter-cyrillic-900.woff") format("woff");
+  font-display: swap;
+}
+
+/* общие стили */
+
 .page {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #2D3440;
+
   background-color: #FEAFC3;
 }
 
@@ -10,11 +46,27 @@
   padding: 0;
   white-space: nowrap;
   clip-path: inset(100%);
-  clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
 /* button */
+
+.button {
+  box-sizing: border-box;
+
+	font-family: "Inter", "Arial", sans-serif;
+	font-size: 16px;
+  font-style: normal;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #2D3440;
+  text-decoration: none;
+
+	border-radius: 26px;
+}
+
+/* кнопки пользовательского меню */
 
 .button--search {
   background-image: url("../img/icons/search.svg");
@@ -28,6 +80,16 @@
   background-color: #FF2F64;
 }
 
+.button--disabled {
+  opacity: 0.2;
+}
+
+.button__text-with-icon {
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+}
+
 .button__icon--dark {
   fill: #2D3440;
 }
@@ -35,6 +97,155 @@
 .button__icon--light {
   fill: #FCFCFC;
 }
+
+/* button prime */
+
+.button--prime {
+	min-width: 110px;
+	min-height: 44px;
+	padding: 12px 32px;
+
+	background-color: #FCFCFC;
+	border: 4px solid #FFCBD8;
+}
+
+/* button-dotes */
+
+.button--dotes {
+	width: 12px;
+	height: 12px;
+	background-color: #FFCBD8;
+	border: 1px solid transparent;
+}
+
+/* button--accent */
+
+.button--accent {
+	min-width: 110px;
+	min-height: 44px;
+	padding: 12px 32px;
+
+	color: #fcfcfc;
+
+	background-color: #FF2F64;
+	border: 4px solid #FEAFC3;
+}
+
+/* button-pagination */
+
+.button--pagination {
+	min-width: 24px;
+	min-height: 24px;
+	padding: 2px 8px;
+
+	background-color: transparent;
+	border: 1px solid transparent;
+}
+
+/* button-minor */
+
+.button--minor {
+	min-width: 105px;
+	min-height: 36px;
+	padding: 8px 32px;
+
+	font-size: 14px;
+
+	background-color: #FFCBD8;
+	border: 2px solid #FCFCFC;
+}
+
+
+/* button-current */
+
+.button--current {
+  background-color: #FCFCFC;
+}
+
+
+/* header */
+
+
+/* site-menu */
+
+.site-menu__link {
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+.site-menu__link--current {
+  color: #FCFCFC;
+
+  background-color: #FF4A78;
+}
+
+/* phone */
+
+.phone-link {
+  font-weight: 700;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+.phone-link--size-s {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.phone-link--size-m {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* main */
+
+.page__title {
+  font-size: 32px;
+  line-height: 46px;
+  font-weight: 900;
+}
+
+/* breadcrumbs */
+
+.breadcrumbs__link {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #2D3440;
+  text-decoration: underline;
+}
+
+.breadcrumbs__link:not([href]) {
+  text-decoration: none;
+}
+
+/* carousel */
+
+.carousel__img-wrapper {
+  display: block;
+  position: relative;
+}
+
+.carousel__img-wrapper::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+
+  width: 312px;
+  height: 312px;
+
+  background-color: #FFCBD8;
+  border-radius: 50%;
+
+  transform: translateY(-50%);
+}
+
+.carousel__img-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
 
 /* social */
 
@@ -58,13 +269,86 @@
   background-image: url("../img/icons/instagram.svg");
 }
 
+/* offer */
+
+.offer__title {
+  color: #2D3440;
+}
+
+.offer__title--size-l {
+  font-size: 36px;
+  line-height: 46px;
+  font-weight: 900;
+}
+
+.offer__title--size-m {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.offer__text-unit--size-l {
+  font-size: 18px;
+  line-height: 24px;
+}
+.offer__text-unit--size-m {
+  font-size: 16px;
+  line-height: 22px;
+}
+
 /* feature */
+
+.feature__title {
+  font-size: 32px;
+  line-height: 46px;
+  font-weight: 900;
+}
 
 /* feature--accent */
 
 .feature--accent {
+  position: relative;
+  width: 1170px;
+
+  padding: 24px;
+
   background-image: url("../img/pattern@1x.jpg");
   background-size: 144px 73px;
+}
+
+.feature--accent::before {
+  position: absolute;
+  content: "";
+
+  top: 24px;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+
+  background-color: #FCFCFC;
+}
+
+.feature--accent > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* feature--delivery */
+
+.feature--delivery {
+  width: 1170px;
+  height: 534px;
+  background-image: url("../img/assorted@1x.jpg");
+  background-repeat: no-repeat;
+}
+
+/* feature--contacts */
+
+.feature--contacts {
+  width: 1170px;
+  height: 492px;
+  background-image: url("../img/icecream_cones@1x.jpg");
+  background-repeat: no-repeat;
 }
 
 /* ad-card: элемент анонсов/промо/объявлений */
@@ -72,6 +356,8 @@
 .ad-card {
   width: 570px;
   height: 268px;
+
+  background-color: #FF7799;
 }
 
 .ad-card--option-1 {
@@ -84,9 +370,12 @@
   background-repeat: no-repeat;
 }
 
-/* feature: текстовые элементы */
+/* текстовые элементы feature*/
+.feature__text-unit {
+  color: #565C66;
+}
 
-.feature__text-unit::before {
+.feature__text-unit--with-icon::before {
   content: "";
 
   display: block;
@@ -99,27 +388,29 @@
 	border-radius: 50%;
 }
 
-.feature__text-unit--item-1::before {
+.feature__text-unit-with-icon-1::before {
   background-image: url("../img/icons/eskimo.svg");
 }
 
-.feature__text-unit--item-2::before {
+.feature__text-unit-with-icon-2::before {
   background-image: url("../img/icons/cow.svg");
 }
 
-.feature__text-unit--item-3::before {
+.feature__text-unit-with-icon-3::before {
   background-image: url("../img/icons/leaf.svg");
 }
 
-.feature__text-unit--item-4::before {
+.feature__text-unit-with-icon-4::before {
   background-image: url("../img/icons/thermometer.svg");
 }
 
-
-/* feature-card: элемент статей/постов/aside-информации */
+/* feature-card: элемент рассылки/постов/aside-информации */
 .feature-card {
+  box-sizing: border-box;
   width: 570px;
   height: 216px;
+
+  background-color: #FCFCFC;
 }
 
 .feature-card--post-1 {
@@ -127,29 +418,182 @@
   background-repeat: no-repeat;
 }
 
-/* deal-card: блок для форм/контактов, обеспечивающих взаимодействие с клиентом */
+.feature-card--accent {
+  position: relative;
+  padding: 6px;
 
-.deal-card--accent {
-  width: 570px;
-  height: 216px;
   background-image: url("../img/linear-pattern@1x.jpg");
 }
 
-.feature--delivery {
-  width: 1170px;
-  height: 534px;
-  background-image: url("../img/assorted@1x.jpg");
-  background-repeat: no-repeat;
+.feature-card--accent::before {
+  position: absolute;
+  content: "";
+  top: 6px;
+  right: 6px;
+  bottom: 6px;
+  left: 6px;
+
+  display: block;
+
+  background-color: #FCFCFC;
 }
 
-.feature--contacts {
-  width: 1170px;
-  height: 492px;
-  background-image: url("../img/icecream_cones@1x.jpg");
-  background-repeat: no-repeat;
+.feature-card--accent > * {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card__text-unit {
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+}
+
+.feature-card__title-link {
+  text-decoration: none;
+}
+
+.feature-card__title {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #2D3440;
+}
+
+/* deal-card: блок для форм/контактов, обеспечивающих взаимодействие с клиентом */
+
+.deal-card {
+  background-color: #FCFCFC;
+}
+
+.deal-card__text-unit {
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+}
+
+.deal-card__address {
+  font-style: normal;
+}
+
+.deal-card__address-text {
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+}
+
+.deal-card__comment {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* product-card: блок для продукции */
+
+.product-card {
+  width: 270px;
+
+  background-color: #FCFCFC;
+}
+
+.product-card__title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.product-card__description {
+  color: #565C66;
+}
+
+.product-card__price {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+/* общие формы */
+
+/* subscribe-form */
+
+.subscribe-form__field::placeholder {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #B9B9B9;
+}
+
+/* order-form */
+
+.order-form__label {
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.order-form__field::placeholder {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #B9B9B9;
+}
+
+/* catalog */
+
+.catalog-filter__wrapper {
+  background-color: #FFCBD8;
+}
+
+.catalog-filter__label,
+.catalog-filter__title {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.catalog-filter__field::placeholder {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #2D3440;
+}
+
+.catalog-filter__range-toggle {
+  position: relative;
+
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+
+  background-color: #2D3440;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+.catalog-filter__range-toggle::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  background-color: #FCFCFC;
+  border-radius: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
 }
 
 /* footer */
+
+.commerce__link {
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+.commerce__link--favor {
+  font-weight: 700;
+}
 
 .commerce__link--favor::before {
   content: "";
@@ -161,5 +605,15 @@
   background-image: url("../img/icons/heart.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.partner-text {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.partner-text__link {
+  color: inherit;
+  text-decoration: underline;
 }
 

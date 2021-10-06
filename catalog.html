@@ -10,6 +10,9 @@
     <meta name="description" content="Каталог сливочного мороженого Gllacy shop: мороженое собственного производства с доставкой на дом.">
     <meta name="robots" content="index,follow">
 
+    <link rel="preload" href="../fonts/inter-latin_cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/inter-latin_cyrillic-400.woff" as="font" type="font/woff" crossorigin>
+
     <link rel="stylesheet" href="styles/style.css">
 
     <title>Gllacy | Каталог</title>
@@ -31,7 +34,7 @@
             <a class="site-menu__link" href="#">О&nbsp;компании</a>
           </li>
         </ul>
-        <a class="page-header__phone phone" href="tel:+78005558628">+7 800 555-86-28</a>
+        <a class="page-header__phone phone-link phone-link--size-s" href="tel:+78005558628">+7 800 555-86-28</a>
         <button class="button button--iconic button--light" type="button">
           <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Поиск по сайту.">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.91286 7.24625C1.91286 4.30073 4.30068 1.91292 7.2462 1.91292C10.1917 1.91292 12.5795 4.30073 12.5795 7.24625C12.5795 8.68547 12.0095 9.99154 11.0828 10.951C11.0582 10.9695 11.0346 10.99 11.0123 11.0124C10.9899 11.0347 10.9694 11.0583 10.9509 11.0829C9.99146 12.0095 8.6854 12.5796 7.2462 12.5796C4.30068 12.5796 1.91286 10.1918 1.91286 7.24625ZM11.4653 12.4082C10.3161 13.3487 8.84703 13.9129 7.2462 13.9129C3.5643 13.9129 0.579529 10.9281 0.579529 7.24625C0.579529 3.56435 3.5643 0.579582 7.2462 0.579582C10.9281 0.579582 13.9129 3.56435 13.9129 7.24625C13.9129 8.84711 13.3486 10.3162 12.4081 11.4654L15.2176 14.2749C15.4779 14.5352 15.4779 14.9573 15.2176 15.2177C14.9572 15.478 14.5351 15.478 14.2748 15.2177L11.4653 12.4082Z"/>
@@ -40,18 +43,22 @@
         <ul class="page-header__user-menu user-menu">
           <li class="user-menu__item">
             <a class="user-menu__link button button--iconic button--light" href="#">
-              <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Личный кабинет.">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.2.87c0-.36.3-.66.68-.66h3a2.17 2.17 0 012.16 2.17v10.5a2.17 2.17 0 01-2.16 2.16h-3a.67.67 0 010-1.33h3a.83.83 0 00.83-.84V2.38a.83.83 0 00-.84-.83h-3a.67.67 0 01-.66-.67zM5.66 3.4a.67.67 0 01.95 0l3.74 3.75a.66.66 0 010 .95L6.6 11.85a.67.67 0 11-.95-.95l2.62-2.6H.87a.67.67 0 010-1.34h7.4L5.65 4.35a.67.67 0 010-.95z"/>
-              </svg>
-              Вход
+              <span class="button__text-with-icon">
+                <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Личный кабинет.">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.2.87c0-.36.3-.66.68-.66h3a2.17 2.17 0 012.16 2.17v10.5a2.17 2.17 0 01-2.16 2.16h-3a.67.67 0 010-1.33h3a.83.83 0 00.83-.84V2.38a.83.83 0 00-.84-.83h-3a.67.67 0 01-.66-.67zM5.66 3.4a.67.67 0 01.95 0l3.74 3.75a.66.66 0 010 .95L6.6 11.85a.67.67 0 11-.95-.95l2.62-2.6H.87a.67.67 0 010-1.34h7.4L5.65 4.35a.67.67 0 010-.95z"/>
+                </svg>
+                Вход
+              </span>
             </a>
           </li>
           <li class="user-menu__item">
             <a class="user-menu__link button button--iconic button--light" href="#">
-              <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Корзина.">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
-              </svg>
-              2&nbsp;Товара
+              <span class="button__text-with-icon">
+                <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="17" height="16" role="img" aria-label="Корзина.">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+                </svg>
+                2&nbsp;Товара
+              </span>
             </a>
           </li>
         </ul>
@@ -78,7 +85,7 @@
           <!-- сортировка -->
           <div class="catalog-form__filter catalog-filter">
             <label class="catalog-filter__label" for="sort">Сортировка:</label>
-            <select class="catalog-filter__select" id="sort" name="sort">
+            <select class="catalog-filter__select catalog-filter__wrapper" id="sort" name="sort">
               <option value="popular">по&nbsp;популярности</option>
               <option value="cheap">сначала дешевле</option>
               <option value="expensive">сначала дороже</option>
@@ -95,17 +102,19 @@
               <span class="visually-hidden">до</span>
               <input class="catalog-filter__field" type="number" name="max-price">₽
             </label>
-            <button class="catalog-filter__range-toggle catalog-filter__range-toggle--min" type="button">
-              <span class="visually-hidden">Изменить минимальную цену.</span>
-            </button>
-            <button class="catalog-filter__range-toggle catalog-filter__range-toggle--max" type="button">
-              <span class="visually-hidden">Изменить максимальную цену.</span>
-            </button>
+            <div class="catalog-filter__wrapper">
+              <button class="catalog-filter__range-toggle catalog-filter__range-toggle--min" type="button">
+                <span class="visually-hidden">Изменить минимальную цену.</span>
+              </button>
+              <button class="catalog-filter__range-toggle catalog-filter__range-toggle--max" type="button">
+                <span class="visually-hidden">Изменить максимальную цену.</span>
+              </button>
+            </div>
           </fieldset>
           <!-- фильтр по жирности -->
           <fieldset class="catalog-filter">
             <legend class="catalog-filter__title">Жирность:</legend>
-            <ul class="catalog-filter__list">
+            <ul class="catalog-filter__list catalog-filter__wrapper">
               <li class="catalog-filter__item">
                 <label class="catalog-filter__control">
                   <input class="visually-hidden" type="radio" name="fat" value="0">
@@ -139,7 +148,7 @@
           <!-- фильтр по наполнителям -->
           <fieldset class="catalog-filter">
             <legend class="catalog-filter__title">Наполнители:</legend>
-            <ul class="catalog-filter__list">
+            <ul class="catalog-filter__list catalog-filter__wrapper">
               <li class="catalog-filter__item">
                 <label class="catalog-filter__control">
                   <input class="visually-hidden control-input" type="checkbox" name="chocolate" checked>
@@ -177,7 +186,7 @@
               </li>
             </ul>
           </fieldset>
-          <button class="button" type="submit">Применить</button>
+          <button class="button button--minor" type="submit">Применить</button>
         </form>
         <!-- товары -->
         <ul class="product-list">
@@ -350,29 +359,36 @@
             </picture>
           </li>
         </ul>
-        <button class="button" type="button">Показать ещё</button>
-        <ul class="catalog__pagination pagination">
-          <li class="pagination__item">
-            <a class="pagination__link pagination__link--current">1</a>
-          </li>
-          <li class="pagination__item">
-            <a class="pagination__link" href="#">2</a>
-          </li>
-          <li class="pagination__item">
-            <a class="pagination__link" href="#">3</a>
-          </li>
-          <li class="pagination__item">
-            <a class="pagination__link" href="#">4</a>
-          </li>
-          <li class="pagination__item">
-            <a class="pagination__link" href="#">5</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination__link pagination__link--next" href="#">
-              <span class="visually-hidden">Следующая страница.</span>
-            </a>
-          </li>
-        </ul>
+        <button class="button button--prime" type="button">Показать ещё</button>
+        <div class="catalog__pagination-wrapper">
+          <a class="button button--pagination button--prev button--disabled" href="#">
+            <svg class="button__icon button__icon--dark" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Предыдущая страница.">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.8033 1.80515C6.063 1.54545 6.063 1.12439 5.8033 0.864696C5.54361 0.604997 5.12255 0.604997 4.86285 0.864696L0.194774 5.53277C-0.0640686 5.79162 -0.0649218 6.21075 0.192214 6.47065C0.193377 6.47183 0.194544 6.47301 0.195717 6.47418L4.8638 11.1423C5.12349 11.402 5.54455 11.402 5.80425 11.1423C6.06395 10.8826 6.06395 10.4615 5.80425 10.2018L1.60545 6.00301L5.8033 1.80515Z"/>
+              </svg>
+          </a>
+          <ul class="catalog__pagination pagination">
+            <li class="pagination__item">
+              <a class="button button--pagination button--current">1</a>
+            </li>
+            <li class="pagination__item">
+              <a class="button button--pagination" href="#">2</a>
+            </li>
+            <li class="pagination__item">
+              <a class="button button--pagination" href="#">3</a>
+            </li>
+            <li class="pagination__item">
+              <a class="button button--pagination" href="#">4</a>
+            </li>
+            <li class="pagination__item">
+              <a class="button button--pagination" href="#">5</a>
+            </li>
+          </ul>
+          <a class="button button--pagination button--pagination-next" href="#">
+            <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="none" role="img" aria-label="Следующая страница.">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.13526 2.8647C6.87557 2.605 6.45451 2.605 6.19481 2.8647C5.93511 3.12439 5.93511 3.54545 6.19481 3.80515L10.3961 8.00643L6.19477 12.2077C5.93508 12.4674 5.93508 12.8885 6.19477 13.1482C6.45447 13.4079 6.87553 13.4079 7.13523 13.1482L11.8039 8.47949C11.8049 8.47855 11.8058 8.47761 11.8068 8.47666C12.0665 8.21696 12.0665 7.79591 11.8068 7.53621L7.13526 2.8647Z"/>
+            </svg>
+          </a>
+        </div>
       </section>
     </main>
     <footer class="page__footer">
@@ -396,9 +412,7 @@
         </ul>
       <ul class="commerce">
         <li class="commerce__item">
-          <a class="commerce__link commerce__link--favor" href="#">
-            <b>Для поставщиков</b>
-          </a>
+          <a class="commerce__link commerce__link--favor" href="#">Для поставщиков</a>
         </li>
         <li class="commerce__item">
           <a class="commerce__link" href="#">О&nbsp;производстве</a>
@@ -413,7 +427,7 @@
       <a class="partner-logo" href="https://htmlacademy.ru/">
         <img class="partner-logo__img" src="img/logo_htmlacademy.svg" alt="HTML Academy" width="93" height="27">
       </a>
-      <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
+      <p class="partner-text">Сделано в <a class="partner-text__link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
     </footer>
   </body>
 </html>
