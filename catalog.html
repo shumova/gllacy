@@ -18,7 +18,7 @@
     <title>Gllacy | Каталог</title>
   </head>
   <body class="page">
-    <header class="page__header page-header container">
+    <header class="page__header page__header--inner page-header container">
       <nav class="page-header__navigation">
         <a class="page-header__logo logo" href="index.html">
           <img class="logo__img" src="img/logo.svg" alt="Gllacy Shop" width="137" height="56">
@@ -35,7 +35,7 @@
           </li>
         </ul>
         <a class="page-header__phone phone-link phone-link--size-s" href="tel:+78005558628">+7 800 555-86-28</a>
-        <button class="button button--iconic button--light" type="button">
+        <button class="page-header__search button button--iconic button--light" type="button">
           <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Поиск по сайту.">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.91286 7.24625C1.91286 4.30073 4.30068 1.91292 7.2462 1.91292C10.1917 1.91292 12.5795 4.30073 12.5795 7.24625C12.5795 8.68547 12.0095 9.99154 11.0828 10.951C11.0582 10.9695 11.0346 10.99 11.0123 11.0124C10.9899 11.0347 10.9694 11.0583 10.9509 11.0829C9.99146 12.0095 8.6854 12.5796 7.2462 12.5796C4.30068 12.5796 1.91286 10.1918 1.91286 7.24625ZM11.4653 12.4082C10.3161 13.3487 8.84703 13.9129 7.2462 13.9129C3.5643 13.9129 0.579529 10.9281 0.579529 7.24625C0.579529 3.56435 3.5643 0.579582 7.2462 0.579582C10.9281 0.579582 13.9129 3.56435 13.9129 7.24625C13.9129 8.84711 13.3486 10.3162 12.4081 11.4654L15.2176 14.2749C15.4779 14.5352 15.4779 14.9573 15.2176 15.2177C14.9572 15.478 14.5351 15.478 14.2748 15.2177L11.4653 12.4082Z"/>
           </svg>
@@ -60,10 +60,10 @@
         </ul>
       </nav>
     </header>
-    <main class="page__main page-inner container">
-      <header class="page-inner__header">
-        <h1 class="page__title">Сливочное мороженое</h1>
-        <ul class="breadcrumbs">
+    <main class="page__content page__content--inner page-inner container">
+      <header class="page-inner__section page-inner__header">
+        <h1 class="page-inner__title">Сливочное мороженое</h1>
+        <ul class="page-inner__breadcrumbs breadcrumbs">
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link" href="index.html">Главная</a>
           </li>
@@ -75,11 +75,11 @@
           </li>
         </ul>
       </header>
-      <section class="catalog">
+      <section class="page-inner__section catalog">
         <h2 class="visually-hidden">Список товаров с фильтрами.</h2>
-        <section class="filters">
+        <section class="catalog__filters filters">
           <h3 class="visually-hidden">Фильтры.</h3>
-          <form class="catalog-form" action="https://echo.htmlacademy.ru/" method="get">
+          <form class="catalog__form catalog-form" action="https://echo.htmlacademy.ru/" method="get">
             <!-- сортировка -->
             <div class="catalog-form__filter catalog-filter">
               <label class="catalog-filter__label" for="sort">Сортировка:</label>
@@ -191,9 +191,9 @@
         </section>
 
         <!-- товары -->
-        <section class="feature">
+        <section class="catalog__products products">
           <h3 class="visually-hidden">Каталог</h3>
-          <ul class="feature__content product-list">
+          <ul class="catalog__product-list product-list">
             <li class="product-list__item product-card">
               <h4 class="product-card__title">Малинка</h4>
               <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
@@ -398,7 +398,7 @@
          </section>
       </section>
     </main>
-    <footer class="page__footer page__footer--inner page-footer container">
+    <footer class="page__footer page-footer--inner page-footer container">
         <!-- social -->
         <ul class="page-footer__social social">
           <li class="social__item">
@@ -432,10 +432,10 @@
         </li>
       </ul>
       <div class="page-footer__partner-wrapper">
-        <a class="partner-logo" href="https://htmlacademy.ru/">
-          <img class="partner-logo__img" src="img/logo_htmlacademy.svg" alt="HTML Academy" width="93" height="27">
+        <a class="page-footer__partner-logo" href="https://htmlacademy.ru/">
+          <img class="page-footer__partner-img" src="img/logo_htmlacademy.svg" alt="HTML Academy" width="93" height="27">
         </a>
-        <p class="partner-text">Сделано в <a class="partner-text__link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
+        <p class="page-footer__partner-text">Сделано в <a class="page-footer__partner-link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
       </div>
     </footer>
   </body>

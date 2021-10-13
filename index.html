@@ -35,7 +35,7 @@
           </li>
         </ul>
         <a class="page-header__phone phone-link phone-link--size-s" href="tel:+78005558628">+7 800 555-86-28</a>
-        <button class="button button--iconic button--light" type="button">
+        <button class="page-header__search button button--iconic button--light" type="button">
           <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Поиск по сайту.">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.91286 7.24625C1.91286 4.30073 4.30068 1.91292 7.2462 1.91292C10.1917 1.91292 12.5795 4.30073 12.5795 7.24625C12.5795 8.68547 12.0095 9.99154 11.0828 10.951C11.0582 10.9695 11.0346 10.99 11.0123 11.0124C10.9899 11.0347 10.9694 11.0583 10.9509 11.0829C9.99146 12.0095 8.6854 12.5796 7.2462 12.5796C4.30068 12.5796 1.91286 10.1918 1.91286 7.24625ZM11.4653 12.4082C10.3161 13.3487 8.84703 13.9129 7.2462 13.9129C3.5643 13.9129 0.579529 10.9281 0.579529 7.24625C0.579529 3.56435 3.5643 0.579582 7.2462 0.579582C10.9281 0.579582 13.9129 3.56435 13.9129 7.24625C13.9129 8.84711 13.3486 10.3162 12.4081 11.4654L15.2176 14.2749C15.4779 14.5352 15.4779 14.9573 15.2176 15.2177C14.9572 15.478 14.5351 15.478 14.2748 15.2177L11.4653 12.4082Z"/>
           </svg>
@@ -60,9 +60,9 @@
         </ul>
       </nav>
     </header>
-    <main class="page__main page-main container">
+    <main class="page__content page-main container">
       <h1 class="visually-hidden">Главная страница джелатерии Gllacy Shop.</h1>
-      <div class="carousel">
+      <div class="page-main__section carousel">
         <!-- слайдер -->
         <ul class="carousel__list">
           <!-- первый слайд -->
@@ -70,7 +70,7 @@
             <div class="carousel__offer offer">
               <h2 class="offer__title offer__title--size-l">Нежный пломбир с&nbsp;клубничным джемом</h2>
               <div class="offer__text offer__text--size-l">
-                <p class="offer__text-unit offer__text-unit--size-l">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
+                <p class="offer__text-unit offer__text-unit--size-l">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;мо&shy;ло&shy;ка с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
               </div>
               <a class="offer__button button button--prime" href="#">Заказать</a>
             </div>
@@ -118,7 +118,7 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.13526 0.864696C0.875566 0.604997 0.454511 0.604997 0.194813 0.864696C-0.0648862 1.12439 -0.0648862 1.54545 0.194813 1.80515L4.39609 6.00643L0.194774 10.2077C-0.0649247 10.4674 -0.0649247 10.8885 0.194774 11.1482C0.454473 11.4079 0.875527 11.4079 1.13523 11.1482L5.80394 6.47949C5.80489 6.47855 5.80583 6.47761 5.80678 6.47666C6.06648 6.21696 6.06648 5.79591 5.80678 5.53621L1.13526 0.864696Z"/>
           </svg>
         </button>
-        <div class="pagination-and-social-wrapper">
+        <div class="carousel__pagination-and-social-wrapper">
           <!-- pagination -->
           <ol class="carousel__pagination pagination">
             <li class="pagination__item">
@@ -138,7 +138,7 @@
             </li>
           </ol>
           <!-- social -->
-          <ul class="social">
+          <ul class="carousel__social social">
             <li class="social__item">
               <a class="social__link social__link--vk" href="https://vk.com/htmlacademy">
                 <span class="visually-hidden">Вконтакте.</span>
@@ -157,7 +157,7 @@
           </ul>
         </div>
       </div> <!-- закрывает carousel-->
-      <section class="feature">
+      <section class="page-main__section feature">
         <h2 class="feature__title">Заказывайте мороженое<br>и получайте подарки!</h2>
         <div class="feature__content">
           <article class="feature__card ad-card ad-card--option-1">
@@ -180,9 +180,9 @@
           </article>
         </div>
       </section>
-      <section class="feature">
+      <section class="page-main__section feature">
         <h2 class="feature__title">Попробуйте самые популярные<br>вкусы нашего мороженого</h2>
-        <ul class="feature__content product-list">
+        <ul class="feature__product-list product-list">
           <li class="product-list__item product-card">
             <h3 class="product-card__title">Малинка</h3>
             <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
@@ -241,9 +241,9 @@
           </li>
         </ul>
       </section>
-      <section class="feature feature--accent">
+      <section class="page-main__section feature feature--accent">
           <h2 class="feature__title">Магазин Глэйси – это онлайн и офлайн-магазин по продаже мороженого собственного проиводства на развес</h2>
-          <ul class="feature__content feature-list">
+          <ul class="feature__list">
             <li class="feature__list-item">
               <p class="feature__text-unit feature__text-unit--with-icon feature__text-unit-with-icon-1">Все наше мороженое изгатавливается на&nbsp;собственном производстве, с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</p>
             </li>
@@ -254,40 +254,39 @@
               <p class="feature__text-unit feature__text-unit--with-icon feature__text-unit-with-icon-3">Для приготовления мороженого используются сливки и&nbsp;молоко высочайшего качества. Все ингредиенты и&nbsp;добавки произведены из&nbsp;натурального сырья.</p>
             </li>
             <li class="feature__list-item">
-              <p class="feature__text-unit feature__text-unit--with-icon feature__text-unit-with-icon-4">Доставка нашего мороженого осуществляется в&nbsp;специальном термопаке, который не&nbsp;дает мороженому растаять и&nbsp;позволяет сохранить превосходный вкус.</p>
+              <p class="feature__text-unit feature__text-unit--with-icon feature__text-unit-with-icon-4">Доставка нашего мороженого осуществляется в&nbsp;спе&shy;ци&shy;альном термопаке, который не&nbsp;даёт морожено&shy;му растаять и&nbsp;позволяет сохранить превосходный вкус.</p>
             </li>
           </ul>
       </section>
-      <aside class="feature">
+      <aside class="page-main__section feature">
         <h2 class="visually-hidden">Блог Gllacy Shop</h2>
         <div class="feature__content">
-          <section class="feature__card feature-card feature-card--post-1">
+          <section class="feature__card post-card post-card--post-1">
              <!-- По макету у "Новое в нашем блоге" line-height 20px вместо 22px. Если будет заметна разница, скорректирую-->
-            <p class="feature-card__text-unit">Новое в&nbsp;нашем блоге</p>
-            <a class="feature-card__title-link" href="#">
-              <h3 class="feature-card__title">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</h3>
+            <p class="post-card__text-unit">Новое в&nbsp;нашем блоге</p>
+            <a class="post-card__title-link" href="#">
+              <h3 class="post-card__title">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</h3>
             </a>
           </section>
-          <section class="feature__card feature-card feature-card--accent">
+          <section class="feature__card post-card post-card--accent">
             <h3 class="visually-hidden">Новостная рассылка.</h3>
-            <div class="feature-card__content">
-              <p class="feature-card__text-unit">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
-              <form class="feature-card__form subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="post-card__content">
+              <p class="post-card__text-unit">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
+              <form class="post-card__form subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
                 <label class="visually-hidden" for="subscribe-email">Введите свой email.</label>
                 <input class="subscribe-form__field" placeholder="email@example.com" type="email" name="subscribe-email" id="subscribe-email" required>
                 <button class="button button--accent" type="submit">Отправить</button>
               </form>
             </div>
-
           </section>
         </div>
       </aside>
-      <section class="pictorial-section pictorial-section--delivery">
+      <section class="page-main__section pictorial-section pictorial-section--delivery">
         <div class="pictorial-section__text pictorial-section__text--delivery">
           <h2 class="pictorial-section__title pictorial-section__title--delivery">Доставка любимого мороженого на дом</h2>
           <p class="pictorial-section__text-unit">Хочется полакомиться любимым дессертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом и&nbsp;курьер привезет вам ваш заказ в&nbsp;течение часа!</p>
         </div>
-        <div class="pictorial-section__deal-card pictorial-section__deal-card--delivery deal-card">
+        <div class="pictorial-section__deal-card deal-card deal-card--delivery">
           <p class="deal-card__text-unit">Укажите адрес и&nbsp;дату доставки, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заказ.</p>
           <form class="deal-card__form order-form" action="https://echo.htmlacademy.ru/" method="post">
             <p class="order-form__date">
@@ -315,9 +314,9 @@
           </form>
          </div>
       </section>
-      <section class="pictorial-section pictorial-section--contacts">
+      <section class="page-main__section pictorial-section pictorial-section--contacts">
         <h2 class="visually-hidden">Контакты.</h2>
-        <div class="pictorial-section__deal-card pictorial-section__deal-card--contacts deal-card">
+        <div class="pictorial-section__deal-card deal-card deal-card--contacts">
           <address class="deal-card__address">
             <dl class="deal-card__text">
               <dt class="deal-card__text-unit">Адрес главного офиса<br/>и&nbsp;офлайн-магазина:</dt>
@@ -369,10 +368,10 @@
         </li>
       </ul>
       <div class="page-footer__partner-wrapper">
-        <a class="partner-logo" href="https://htmlacademy.ru/">
-          <img class="partner-logo__img" src="img/logo_htmlacademy.svg" alt="HTML Academy" width="93" height="27">
+        <a class="page-footer__partner-logo" href="https://htmlacademy.ru/">
+          <img class="page-footer__partner-img" src="img/logo_htmlacademy.svg" alt="HTML Academy" width="93" height="27">
         </a>
-        <p class="partner-text">Сделано в <a class="partner-text__link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
+        <p class="page-footer__partner-text">Сделано в <a class="page-footer__partner-link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
       </div>
     </footer>
   </body>
