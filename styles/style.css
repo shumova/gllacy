@@ -31,11 +31,14 @@
   box-sizing: border-box;
 }
 
+
+
 .page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-width: 1366px;
+  /* min-width: 1366px; */
+  width: 100%;
   margin: 0;
 
   font-family: "Inter", Arial, sans-serif;
@@ -922,13 +925,13 @@
 .catalog__pagination-wrapper {
   display: flex;
   align-items: center;
+  max-width: 395px;
   margin-left: auto;
 }
 
 .catalog__pagination {
-  max-width: 330px;
-  gap: 0;
-  margin: 0 16px;
+  margin: 0 12px;
+  justify-content: center;
 }
 
 /* catalog-form */
@@ -1079,6 +1082,8 @@
   font-weight: 700;
   overflow: hidden;
 
+  overflow-wrap: break-word;
+
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -1167,6 +1172,8 @@
 /* кнопки */
 
 .button {
+  align-self: center;
+
   display: grid;
   max-width: 300px;
 	align-items: center;
@@ -1274,6 +1281,10 @@
 	border: 1px solid transparent;
 }
 
+.button--pagination-arrow {
+  padding: 4px;
+}
+
 /* button-minor */
 
 .button--minor {
@@ -1298,7 +1309,7 @@
 .button--control {
 	width: 38px;
 	height: 38px;
-	padding: 11px;
+	padding: 9px;
 	font-size: 14px;
 
 	background-color: rgba(252, 252, 252, 0.3);
@@ -1356,6 +1367,10 @@
   border-color: #fcfcfc;
 }
 
+.button--pagination-arrow:hover .button__icon {
+  fill: #FCFCFC;
+}
+
 .button--dotes:hover {
   border-color: #fcfcfc;
 }
@@ -1395,49 +1410,62 @@
   background-color: rgba(252, 252, 252, 0.3);
 }
 
+.button--pagination-arrow:focus .button__icon {
+  opacity: 0.4;
+}
+
 .button--dotes:focus {
   background-color: #FFCBD8;
 }
 
 /* неактивное сосотояние кнопок */
 
-.button:disabled {
-  cursor: auto;
+.button[disabled] {
+  pointer-events: none;
 }
 
-.button--disabled .button__icon {
+.button.disabled {
+  pointer-events: none;
+}
+
+.button[disabled] .button__icon {
   fill: #2D3440;
   opacity: 0.4;
 }
 
-.button--iconic:disabled {
+.button.disabled .button__icon {
+  fill: #2D3440;
+  opacity: 0.4;
+}
+
+.button--iconic[disabled] {
   background-color: #b9b9b9;
 }
 
-.button--prime:disabled {
+.button--prime[disabled] {
   font-weight: 400;
   color: #b9b9b9;
   background-color: #e7e7e7;
   border-color: rgba(254, 175, 195, 0.6);
 }
 
-.button--accent:disabled {
+.button--accent[disabled] {
   font-weight: 400;
   color: #565c66;
   background-color: #b9b9b9;
   border: 4px solid rgba(252, 252, 252, 0.3);
 }
 
-.button--minor:disabled {
+.button--minor[disabled] {
   background-color: #FFCBD8;
   border: 2px solid #FCFCFC;
   opacity: 0.4;
 }
 
-.button--control:disabled {
+.button--control[disabled] {
   opacity: 0.4;
 }
 
-.button--control:disabled .button__icon {
+.button--control[disabled] .button__icon {
   fill: #FCFCFC;
 }
