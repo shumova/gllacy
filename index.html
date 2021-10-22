@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
 
     <meta name="theme-color" content="#FCFCFC">
     <meta name="keywords" content="Gllacy, Глейси, джелатерия, мороженое, доставка мороженого, санкт-петербург">
     <meta name="description" content="Gllacy shop: онлайн и офлайн-магазин по продаже мороженого.">
     <meta name="robots" content="index,follow">
 
-    <link rel="preload" href="../fonts/inter-latin_cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/inter-latin_cyrillic-400.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/inter-latin-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter-latin-cyrillic-400.woff" as="font" type="font/woff" crossorigin>
 
     <link rel="stylesheet" href="styles/style.css">
 
@@ -278,7 +278,7 @@
               <p class="post-card__text-unit">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
               <form class="post-card__form subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
                 <label class="visually-hidden" for="subscribe-email">Введите свой email.</label>
-                <input class="subscribe-form__field" placeholder="email@example.com" type="email" name="subscribe-email" id="subscribe-email" required>
+                <input class="subscribe-form__field form-field" placeholder="email@example.com" type="email" name="subscribe-email" id="subscribe-email" required>
                 <button class="button button--accent" type="submit">Отправить</button>
               </form>
             </div>
@@ -291,28 +291,25 @@
           <p class="pictorial-section__text-unit">Хочется полакомиться любимым дессертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом и&nbsp;курьер привезет вам ваш заказ в&nbsp;течение часа!</p>
         </div>
         <div class="pictorial-section__deal-card deal-card deal-card--delivery">
-          <p class="deal-card__text-unit">Укажите адрес и&nbsp;дату доставки, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заказ.</p>
+          <p class="deal-card__text-unit deal-card__text-unit--delivery">Укажите адрес и&nbsp;дату доставки, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заказ.</p>
           <form class="deal-card__form order-form" action="https://echo.htmlacademy.ru/" method="post">
-            <p class="order-form__date">
+            <p class="order-form__item order-form__date">
               <label class="order-form__label" for="order-date">Дата</label>
               <button class="order-form__info" type="button">
                 <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
               </button>
-              <input class="order-form__field" placeholder="01.04.2020" type="text" name="order-date" id="order-date" required>
+              <input class="order-form__field form-field" placeholder="01.04.2020" type="text" name="order-date" id="order-date" required>
             </p>
-            <p class="order-form__phone">
+            <p class="order-form__item order-form__phone">
               <label class="order-form__label" for="order-phone">Телефон</label>
-              <button class="order-form__info" type="button">
-                <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
-              </button>
-              <input class="order-form__field" placeholder="+7 800 999-00-00" type="text" name="order-phone" id="order-phone" required>
+              <input class="order-form__field form-field" placeholder="+7 800 999-00-00" type="text" name="order-phone" id="order-phone" required>
             </p>
-            <p class="order-form__address">
+            <p class="order-form__item order-form__address">
               <label class="order-form__label" for="order-address">Адрес</label>
               <button class="order-form__info" type="button">
                 <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
               </button>
-              <input class="order-form__field" placeholder="ул. Большая Конюшенная, 19/8" type="text" name="order-address" id="order-address" required>
+              <input class="order-form__field form-field" placeholder="ул. Большая Конюшенная, 19/8" type="text" name="order-address" id="order-address" required>
             </p>
             <button class="order-form__button button button--accent" type="submit">Отправить</button>
           </form>
@@ -323,12 +320,12 @@
         <div class="pictorial-section__deal-card deal-card deal-card--contacts">
           <address class="deal-card__address">
             <dl class="deal-card__text">
-              <dt class="deal-card__text-unit">Адрес главного офиса<br/>и&nbsp;офлайн-магазина:</dt>
-              <dd class="deal-card__text-unit">
+              <dt class="deal-card__text-unit deal-card__text-unit--contacts">Адрес главного офиса<br/>и&nbsp;офлайн-магазина:</dt>
+              <dd class="deal-card__text-unit deal-card__text-unit--contacts">
                 <b class="deal-card__address-text">наб. Реки Карповки, 5 лит П, Санкт-Петербург</b>
               </dd>
-              <dt class="deal-card__text-unit">Для заказов по&nbsp;телефону:</dt>
-              <dd class="deal-card__text-unit">
+              <dt class="deal-card__text-unit deal-card__text-unit--contacts">Для заказов по&nbsp;телефону:</dt>
+              <dd class="deal-card__text-unit deal-card__text-unit--contacts">
                 <a class="deal-card__phone phone-link phone-link--size-m" href="tel:+78128121212">+7 (812) 812-12-12</a>
                 <span class="deal-card__comment">(с&nbsp;10&nbsp;до&nbsp;20&nbsp;ежедневно)</span>
               </dd>
@@ -342,17 +339,17 @@
         <!-- social -->
       <ul class="page-footer__social social">
         <li class="social__item">
-          <a class="social__link social__link--vk" href="https://vk.com/htmlacademy">
+          <a class="social__link social__link--vk" href="https://vk.com/htmlacademy" target="_blank">
             <span class="visually-hidden">Вконтакте.</span>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+          <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy" target="_blank">
             <span class="visually-hidden">Facebook.</span>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy/">
+          <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy/" target="_blank">
             <span class="visually-hidden">Instagram.</span>
           </a>
         </li>
@@ -372,10 +369,10 @@
         </li>
       </ul>
       <div class="page-footer__partner-wrapper">
-        <a class="page-footer__partner-logo" href="https://htmlacademy.ru/">
+        <a class="page-footer__partner-logo" href="https://htmlacademy.ru/" target="_blank">
           <img class="page-footer__partner-img" src="img/logo_htmlacademy.svg" alt="HTML Academy" width="93" height="27">
         </a>
-        <p class="page-footer__partner-text">Сделано в <a class="page-footer__partner-link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
+        <p class="page-footer__partner-text">Сделано в <a class="page-footer__partner-link" href="https://htmlacademy.ru/" target="_blank">.html academy</a> &copy;&nbsp;2021</p>
       </div>
     </footer>
   </body>

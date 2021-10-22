@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
 
     <meta name="theme-color" content="#FCFCFC">
     <meta name="keywords" content="сливочное мороженое, каталог сливочного мороженого">
     <meta name="description" content="Каталог сливочного мороженого Gllacy shop: мороженое собственного производства с доставкой на дом.">
     <meta name="robots" content="index,follow">
 
-    <link rel="preload" href="../fonts/inter-latin_cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/inter-latin_cyrillic-400.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/inter-latin_cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter-latin_cyrillic-400.woff" as="font" type="font/woff" crossorigin>
 
     <link rel="stylesheet" href="styles/style.css">
 
@@ -29,7 +29,7 @@
         </a>
         <ul class="page-header__site-menu site-menu">
           <li class="site-menu__item">
-            <a class="site-menu__link site-menu__link--current" href="catalog.html">Каталог</a>
+            <a class="site-menu__link current" href="catalog.html">Каталог</a>
           </li>
           <li class="site-menu__item">
             <a class="site-menu__link" href="#">Доставка и&nbsp;оплата</a>
@@ -83,10 +83,10 @@
         <h2 class="visually-hidden">Список товаров с фильтрами.</h2>
         <section class="catalog__filters filters">
           <h3 class="visually-hidden">Фильтры.</h3>
-          <form class="catalog__form catalog-form" action="https://echo.htmlacademy.ru/" method="get">
+          <form class="catalog__form catalog-form" action="https://echo.htmlacademy.ru/" method="get" >
             <!-- сортировка -->
             <div class="catalog-form__filter catalog-filter">
-              <label class="catalog-filter__label" for="sort">Сортировка:</label>
+              <label class="catalog-filter__title" for="sort">Сортировка:</label>
               <select class="catalog-filter__select catalog-filter__wrapper" id="sort" name="sort">
                 <option value="popular">по&nbsp;популярности</option>
                 <option value="cheap">сначала дешевле</option>
@@ -96,23 +96,19 @@
             <!-- фильтр по цене -->
             <fieldset class="catalog-form__filter catalog-filter">
               <legend class="catalog-filter__title">Цена:
-                <label class="catalog-filter__label">
+                <label class="catalog-filter__label" for="minprice">
                   <span class="visually-hidden">от</span>
-                  <input class="catalog-filter__field" type="text" name="min-price" placeholder="100">₽
+                  <output for="min-price-input" name="minprice" id="minprice" tabindex="0">100</output>&nbsp;₽
                 </label>
-                <span>&dash;</span>
-                <label class="catalog-filter__label">
+                <span>&ndash;</span>
+                <label class="catalog-filter__label" for="maxprice">
                   <span class="visually-hidden">до</span>
-                  <input class="catalog-filter__field" type="text" name="max-price" placeholder="500">₽
+                  <output for="max-price-input" name="maxprice" id="maxprice" tabindex="0">500</output>&nbsp;₽
                 </label>
               </legend>
               <div class="catalog-filter__wrapper">
-                <button class="catalog-filter__range-toggle catalog-filter__range-toggle--min" type="button">
-                  <span class="visually-hidden">Изменить минимальную цену.</span>
-                </button>
-                <button class="catalog-filter__range-toggle catalog-filter__range-toggle--max" type="button">
-                  <span class="visually-hidden">Изменить максимальную цену.</span>
-                </button>
+                <input class="catalog-filter__range" type="range" name="minpriceinput" id="minpriceinput" min="0" max="790" value="100" step="10" oninput="minprice.value = minpriceinput.valueAsNumber" tabindex="-1">
+                <input class="catalog-filter__range" type="range" name="maxpriceinput" id="maxpriceinput" min="0" max="790" value="500" step="10" oninput="maxprice.value = maxpriceinput.valueAsNumber" tabindex="-1">
               </div>
             </fieldset>
             <!-- фильтр по жирности -->
@@ -121,30 +117,26 @@
               <ul class="catalog-filter__list catalog-filter__wrapper">
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden" type="radio" name="fat" value="0">
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">0%</span>
+                    <input class="visually-hidden catalog-filter__input" type="radio" name="fat" value="0" tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--radio" tabindex="0">0%</span>
                   </label>
                 </li>
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden" type="radio" name="fat" value="lt10" checked>
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">до&nbsp;10%</span>
+                    <input class="visually-hidden catalog-filter__input" type="radio" name="fat" value="lt10" checked tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--radio" tabindex="0">до&nbsp;10%</span>
                   </label>
                 </li>
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden" type="radio" name="fat" value="lt30">
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">до&nbsp;30%</span>
+                    <input class="visually-hidden catalog-filter__input" type="radio" name="fat" value="lt30" tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--radio" tabindex="0">до&nbsp;30%</span>
                   </label>
                 </li>
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden" type="radio" name="fat" value="mt30">
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">выше&nbsp;30%</span>
+                    <input class="visually-hidden catalog-filter__input" type="radio" name="fat" value="mt30" tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--radio" tabindex="0"  >выше&nbsp;30%</span>
                   </label>
                 </li>
               </ul>
@@ -155,37 +147,32 @@
               <ul class="catalog-filter__list catalog-filter__wrapper">
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden control-input" type="checkbox" name="chocolate" checked>
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">шоколадные</span>
+                    <input class="visually-hidden catalog-filter__input" type="checkbox" name="chocolate" checked tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--checkbox" tabindex="0">шоколадные</span>
                   </label>
                 </li>
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden control-input" type="checkbox" name="sugar" checked>
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">сахарные присыпки</span>
+                    <input class="visually-hidden catalog-filter__input" type="checkbox" name="sugar" checked tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--checkbox" tabindex="0">сахарные присыпки</span>
                   </label>
                 </li>
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden control-input" type="checkbox" name="fruits">
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">фрукты</span>
+                    <input class="visually-hidden catalog-filter__input" type="checkbox" name="fruits" tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--checkbox" tabindex="0">фрукты</span>
                   </label>
                 </li>
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden control-input" type="checkbox" name="syrup">
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">сиропы</span>
+                    <input class="visually-hidden catalog-filter__input" type="checkbox" name="syrup" tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--checkbox" tabindex="0">сиропы</span>
                   </label>
                 </li>
                 <li class="catalog-filter__item">
                   <label class="catalog-filter__control">
-                    <input class="visually-hidden control-input" type="checkbox" name="jam">
-                    <span class="catalog-filter__mark"></span>
-                    <span class="catalog-filter__label">джемы</span>
+                    <input class="visually-hidden catalog-filter__input" type="checkbox" name="jam" tabindex="-1">
+                    <span class="catalog-filter__label catalog-filter__label--with-icon catalog-filter__label--checkbox" tabindex="0">джемы</span>
                   </label>
                 </li>
               </ul>
@@ -370,7 +357,7 @@
           <div class="catalog__controls-wrapper">
             <button class="catalog__button button button--prime" type="button">Показать ещё</button>
             <div class="catalog__pagination-wrapper">
-              <a class="button button--pagination-arrow disabled" href="#">
+              <a class="button button--pagination-arrow button--pagination-arrow-prev disabled" href="#">
                 <svg class="button__icon button__icon--dark" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Предыдущая страница.">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M9.8 3.8a.66.66 0 10-.94-.94L4.2 7.53a.67.67 0 000 .94l4.67 4.67a.66.66 0 10.94-.94L5.6 8l4.2-4.2z"/>
                 </svg>
@@ -392,7 +379,7 @@
                   <a class="button button--pagination" href="#">5</a>
                 </li>
               </ul>
-              <a class="button button--pagination-arrow" href="#">
+              <a class="button button--pagination-arrow button--pagination-arrow-next" href="#">
                 <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="none" role="img" aria-label="Следующая страница.">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M7.14 2.86a.66.66 0 10-.95.95L10.4 8l-4.2 4.2a.67.67 0 00.95.94l4.66-4.67a.66.66 0 000-.94L7.15 2.86z"/>
                 </svg>
@@ -406,17 +393,17 @@
         <!-- social -->
         <ul class="page-footer__social social">
           <li class="social__item">
-            <a class="social__link social__link--vk" href="https://vk.com/htmlacademy">
+            <a class="social__link social__link--vk" href="https://vk.com/htmlacademy" target="_blank">
               <span class="visually-hidden">Вконтакте.</span>
             </a>
           </li>
           <li class="social__item">
-            <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+            <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy" target="_blank">
               <span class="visually-hidden">Facebook.</span>
             </a>
           </li>
           <li class="social__item">
-            <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy/">
+            <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy/" target="_blank">
               <span class="visually-hidden">Instagram.</span>
             </a>
           </li>
@@ -436,10 +423,10 @@
         </li>
       </ul>
       <div class="page-footer__partner-wrapper">
-        <a class="page-footer__partner-logo" href="https://htmlacademy.ru/">
+        <a class="page-footer__partner-logo" href="https://htmlacademy.ru/" target="_blank">
           <img class="page-footer__partner-img" src="img/logo_htmlacademy.svg" alt="HTML Academy" width="93" height="27">
         </a>
-        <p class="page-footer__partner-text">Сделано в <a class="page-footer__partner-link" href="https://htmlacademy.ru/">.html academy</a> &copy;&nbsp;2021</p>
+        <p class="page-footer__partner-text">Сделано в <a class="page-footer__partner-link" href="https://htmlacademy.ru/" target="_blank">.html academy</a> &copy;&nbsp;2021</p>
       </div>
     </footer>
   </body>
