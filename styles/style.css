@@ -494,6 +494,81 @@
   opacity: 0.2;
 }
 
+/* общие стили полей форм */
+
+.form-field {
+  align-self: center;
+
+  padding: 13px 15px;
+
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  border: 1px solid var(--basic-neutral);
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: 0.2s linear;
+}
+
+.form-field:hover {
+  border-color: var(--basic-extra-dark);
+}
+
+.form-field:focus {
+  outline: 1px solid var(--basic-extra-dark);
+  border-color: var(--basic-extra-dark);
+}
+
+.form-field:focus:hover {
+  border-color: var(--basic-extra-dark);
+}
+
+.form-field:disabled {
+  color: var(--basic-extra-dark);
+
+  background-color: var(--basic-light);
+  pointer-events: none;
+}
+
+.form-field:disabled::placeholder {
+  color: var(--basic-neutral);
+}
+
+.form-field.without-conditions:hover {
+  border-color: var(--basic-neutral);
+}
+
+.form-field.without-conditions:focus {
+  outline: none;
+  border-color: var(--basic-neutral);
+}
+
+.form-field.without-conditions:focus:hover {
+  border-color: var(--basic-neutral);
+}
+
+/*
+
+Стили полей при отправке некорректных значений в формах
+
+.form-field:invalid {
+  border: 1px solid var(--status-error);
+}
+
+ .form-field:invalid:hover {
+  border: 1px solid var(--status-error);
+  outline: 1px solid var(--status-error);
+}
+
+.form-field:invalid:focus {
+  outline: 1px solid var(--status-error);
+}
+
+*/
+
 /* header */
 
 .page__header--inner {
@@ -930,7 +1005,6 @@
 
   background-color: var(--basic-extra-light);
   border-radius: 4px;
-  box-shadow: var(--box-shadow-large);
 
   transition: 0.2s linear;
 }
@@ -941,11 +1015,14 @@
 
 .search__popover {
   padding: 24px 16px;
+  box-shadow: var(--box-shadow-medium);
 }
 
 .search-form__field {
   position: relative;
   width: 324px;
+
+  cursor: auto;
 }
 
 .search-form__field.different-padding {
@@ -959,8 +1036,8 @@
 
 .search-form__delete-button {
   position: absolute;
-  top: 39px;
-  right: 35px;
+  top: 40px;
+  right: 29px;
 
   display: none;
   width: 16px;
@@ -995,6 +1072,7 @@
 .user-menu__popover {
   max-width: 445px;
   padding: 49px 48px 48px 48px;
+  box-shadow: var(--box-shadow-large);
 }
 
 .user-menu__popover.different-padding {
@@ -1006,6 +1084,8 @@
   padding-left: 32px;
 
   text-align: center;
+
+  box-shadow: var(--box-shadow-medium);
 }
 
 .popover__content {
@@ -2018,6 +2098,10 @@
   word-break: break-all;
 }
 
+.order-form__label:hover + .form-field:disabled {
+  border-color: var(--basic-neutral);
+}
+
 .tooltip {
   position: relative;
 
@@ -2136,87 +2220,6 @@
   justify-self: center;
   margin-top: 12px;
 }
-
-/* общие стили форм */
-
-.form-field {
-  align-self: center;
-
-  padding: 13px 15px;
-
-  font-family: "Inter", "Arial", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-
-  border: 1px solid var(--basic-neutral);
-  border-radius: 4px;
-  cursor: pointer;
-
-  transition: 0.2s linear;
-}
-
-.form-field:hover {
-  border-color: var(--basic-extra-dark);
-}
-
-.form-field:focus {
-  outline: 1px solid var(--basic-extra-dark);
-  border-color: var(--basic-extra-dark);
-}
-
-.form-field:focus:hover {
-  border-color: var(--basic-extra-dark);
-}
-
-.form-field:disabled {
-  color: var(--basic-extra-dark);
-
-  background-color: var(--basic-light);
-  pointer-events: none;
-}
-
-.form-field:disabled::placeholder {
-  color: var(--basic-neutral);
-}
-
-.order-form__label:hover + .form-field:disabled {
-  border-color: var(--basic-neutral);
-}
-
-.form-field.without-conditions:hover {
-  border-color: var(--basic-neutral);
-}
-
-.form-field.without-conditions:focus {
-  outline: none;
-  border-color: var(--basic-neutral);
-}
-
-.form-field.without-conditions:focus:hover {
-  border-color: var(--basic-neutral);
-}
-
-/*
-
-Стили полей при отправке некорректных значений в формах
-
-
-.form-field:invalid {
-  border: 1px solid var(--status-error);
-}
-
- .form-field:invalid:hover {
-  border: 1px solid var(--status-error);
-  outline: 1px solid var(--status-error);
-}
-
-.form-field:invalid:focus {
-  outline: 1px solid var(--status-error);
-}
-
-*/
-
 
 /* catalog */
 
