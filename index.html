@@ -2,26 +2,24 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="theme-color" content="#FCFCFC">
     <meta name="keywords" content="Gllacy, Глейси, джелатерия, мороженое, доставка мороженого, санкт-петербург">
     <meta name="description" content="Gllacy shop: онлайн и офлайн-магазин по продаже мороженого.">
     <meta name="robots" content="index,follow">
 
-    <link rel="preload" href="fonts/inter-latin-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/inter-latin-cyrillic-400.woff" as="font" type="font/woff" crossorigin>
-
     <link rel="stylesheet" href="styles/style.css">
 
     <title>Gllacy | Джелатерия</title>
-    <link rel="icon" href="favicon.ico" sizes="any">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="manifest" href="manifest.webmanifest">
   </head>
-  <body class="page">
+  <body class="page page--background-pink">
     <header class="page__header page-header container">
       <nav class="page-header__navigation">
         <a class="page-header__logo logo" href="index.html" aria-current="page">
@@ -29,7 +27,26 @@
         </a>
         <ul class="page-header__site-menu site-menu">
           <li class="site-menu__item">
-            <a class="site-menu__link" href="catalog.html">Каталог</a>
+            <a class="site-menu__link site-menu__link--with-popup" href="catalog.html" aria-haspopup="true">Каталог</a>
+            <div class="site-menu__popup">
+              <div class="popup-menu">
+                <p class="popup-menu__title">Новинки</p>
+                <ul class="popup-menu__list">
+                  <li class="popup-menu__item">
+                    <a href="catalog.html" class="popup-menu__link">Сливочное</a>
+                  </li>
+                  <li class="popup-menu__item">
+                    <a href="#" class="popup-menu__link">Щербеты</a>
+                  </li>
+                  <li class="popup-menu__item">
+                    <a href="#" class="popup-menu__link">Фруктовый лед</a>
+                  </li>
+                  <li class="popup-menu__item">
+                    <a href="#" class="popup-menu__link">Мелорин</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li class="site-menu__item">
             <a class="site-menu__link" href="#">Доставка и&nbsp;оплата</a>
@@ -39,27 +56,134 @@
           </li>
         </ul>
         <a class="page-header__phone phone-link phone-link--size-s" href="tel:+78005558628">+7 800 555-86-28</a>
-        <button class="page-header__search button button--iconic button--light" type="button">
-          <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Поиск по сайту.">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.91 7.25a5.33 5.33 0 1110.67 0 5.33 5.33 0 01-10.67 0zm9.56 5.16a6.67 6.67 0 11.94-.94l2.8 2.8a.67.67 0 01-.94.95l-2.8-2.81z"/>
-          </svg>
-        </button>
+        <div class="page-header__search search">
+          <button class="search__button button button--iconic button--light" type="button">
+            <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.91 7.25a5.33 5.33 0 1110.67 0 5.33 5.33 0 01-10.67 0zm9.56 5.16a6.67 6.67 0 11.94-.94l2.8 2.8a.67.67 0 01-.94.95l-2.8-2.81z"/>
+            </svg>
+            <span class="visually-hidden">Поиск по сайту.</span>
+          </button>
+
+          <!-- popover для поиска: должен открываться через js нажатием на кнопку поиска (добавлением класса "popover--open"), закрываться - нажатием на страницу вне popover -->
+          <div class="search__popover popover different-padding">
+            <div class="popover__content">
+              <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
+                <label class="visually-hidden" for="search-field">Введите интересующий вас запрос.</label>
+                <input class="search-form__field form-field without-conditions different-padding" type="text" placeholder="Поиск по сайту" name="search-field" id="search-field">
+                <!-- кнопка удаления введённого текста при пустом поле поиска отсутствует и должна появляться с помощью js (добавлением класса "search-form__delete-button--shown") с первым введённым в поле поиска стиволом -->
+                <button class="search-form__delete-button button" type="button">
+                  <span class="visually-hidden">Сбросить запрос</span>
+                  <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8 4.14a.67.67 0 10-.94-.94L8 7.06 4.14 3.2a.67.67 0 10-.94.94L7.06 8 3.2 11.86a.67.67 0 10.94.94L8 8.94l3.86 3.86a.67.67 0 10.94-.94L8.94 8l3.86-3.86z"/>
+                  </svg>
+                </button>
+                <!-- поиск должен запускаться нажатием на Enter -->
+                <button class="visually-hidden" type="submit" tabindex="-1">Искать</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
         <ul class="page-header__user-menu user-menu">
           <li class="user-menu__item">
             <a class="user-menu__link button button--text-with-icon button--light" href="#">
-                <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Личный кабинет.">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.2.87c0-.36.3-.66.68-.66h3a2.17 2.17 0 012.16 2.17v10.5a2.17 2.17 0 01-2.16 2.16h-3a.67.67 0 010-1.33h3a.83.83 0 00.83-.84V2.38a.83.83 0 00-.84-.83h-3a.67.67 0 01-.66-.67zM5.66 3.4a.67.67 0 01.95 0l3.74 3.75a.66.66 0 010 .95L6.6 11.85a.67.67 0 11-.95-.95l2.62-2.6H.87a.67.67 0 010-1.34h7.4L5.65 4.35a.67.67 0 010-.95z"/>
-                </svg>
-                Вход
+              <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2 1.88c0-.37.3-.67.68-.67h3a2.17 2.17 0 012.16 2.17v10.5a2.17 2.17 0 01-2.16 2.16h-3a.67.67 0 010-1.33h3a.83.83 0 00.83-.84V3.38a.83.83 0 00-.84-.83h-3a.67.67 0 01-.66-.67zM6.66 4.4a.67.67 0 01.95 0l3.74 3.75a.66.66 0 010 .95L7.6 12.85a.67.67 0 11-.95-.95l2.62-2.6h-7.4a.67.67 0 010-1.34h7.4L6.65 5.35a.67.67 0 010-.95z" fill="#2D3440"/>
+              </svg>
+              <span class="visually-hidden">Личный кабинет.</span>Вход
             </a>
+
+            <!-- popover для входа в личный кабинет: должен открываться через js нажатием на кнопку Вход (добавлением класса "popover--open"), закрываться - нажатием на страницу вне popover -->
+            <div class="user-menu__popover popover">
+              <div class="popover__content">
+                <p class="popover__title">Личный кабинет</p>
+                <form class="popover__form login-form" action="https://echo.htmlacademy.ru/" method="post">
+                  <label class="visually-hidden" for="login-email">Ваш email.</label>
+                  <input class="login-form__field form-field" type="email" placeholder="email@example.com" name="login-email" id="login-email" required>
+                  <label class="visually-hidden" for="login-password">Ваш пароль.</label>
+                  <input class="login-form__field form-field different-padding" type="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" name="login-password" id="login-password" required>
+                  <div class="login-form__controls">
+
+                    <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
+                    <button class="login-form__button button button--accent" type="submit">Войти</button>
+
+                    <ul class="login-form__act-list">
+                      <li class="login-form__act-item">
+                        <a href="#" class="login-form__act-link">Забыли пароль?</a>
+                      </li>
+                      <li class="login-form__act-item">
+                        <a href="#" class="login-form__act-link">Регистрация</a>
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+
           </li>
           <li class="user-menu__item">
             <a class="user-menu__link button button--text-with-icon button--light" href="#">
-                <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Корзина.">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
-                </svg>
-                Пусто
+              <svg class="button__icon button__icon--dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31 1.49a.67.67 0 100 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 6.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 15.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              </svg>
+              <span class="visually-hidden">Корзина.</span>Пусто
             </a>
+
+            <!-- popover для корзины с товарами: должен открываться с помощью js нажатием на кнопку Корзины (добавление класса "popover--open"), закрываьбся нажатием на страницу вне popover -->
+            <div class="user-menu__popover user-menu__popover--full popover different-padding">
+              <div class="popover__content">
+                <p class="popover__title">
+                  <a class="popover__title-link" href="#">Корзина</a>
+                </p>
+                <ul class="popover__cart-list cart-list">
+                  <li class="popover__cart-item cart-item">
+                    <p class="cart-item__title">Малинка</p>
+                    <p class="cart-item__kilo-price">1&nbsp;кг х 310&nbsp;₽</p>
+                    <p class="cart-item__price">310&nbsp;<span class="cart-item__sign">₽</span></p>
+                    <picture class="cart-item__img-container">
+                      <source srcset="img/product/raspberry-thumbnail@1x.webp 1x, img/product/raspberry-thumbnail@2x.webp 2x" type="image/webp">
+                      <img class="cart-item__img product-img" src="img/product/raspberry-thumbnail@1x.png" srcset="img/product/raspberry-thumbnail@2x.png 2x" width="46" height="46" alt="">
+                    </picture>
+                    <button class="cart-item__button button" type="button">
+                      <span class="visually-hidden">Удалить из корзины</span>
+                      <svg class="cart-item__button-icon button__icon button__icon--dark" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8 4.14a.67.67 0 10-.94-.94L8 7.06 4.14 3.2a.67.67 0 10-.94.94L7.06 8 3.2 11.86a.67.67 0 10.94.94L8 8.94l3.86 3.86a.67.67 0 10.94-.94L8.94 8l3.86-3.86z"/>
+                      </svg>
+                    </button>
+                  </li>
+                  <li class="popover__cart-item cart-item">
+                    <p class="cart-item__title">Бабл-гам</p>
+                    <p class="cart-item__kilo-price">1,5&nbsp;кг х 320&nbsp;₽</p>
+                    <p class="cart-item__price">480&nbsp;<span class="cart-item__sign">₽</span></p>
+                    <picture class="cart-item__img-container">
+                      <source srcset="img/product/bubble-thumbnail@1x.webp 1x, img/product/bubble-thumbnail@2x.webp 2x" type="image/webp">
+                      <img class="cart-item__img product-img" src="img/product/bubble-thumbnail@1x.jpg" srcset="img/product/bubble-thumbnail@2x.jpg 2x" width="46" height="46" alt="">
+                    </picture>
+                    <button class="cart-item__button button" type="button">
+                      <span class="visually-hidden">Удалить из корзины</span>
+                      <svg class="cart-item__button-icon button__icon button__icon--dark" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8 4.14a.67.67 0 10-.94-.94L8 7.06 4.14 3.2a.67.67 0 10-.94.94L7.06 8 3.2 11.86a.67.67 0 10.94.94L8 8.94l3.86 3.86a.67.67 0 10.94-.94L8.94 8l3.86-3.86z"/>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+                <div class="popover__footer">
+
+                  <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
+                  <button class="popover__button button button--accent" type="submit">Оформить заказ</button>
+
+                  <p class="popover__total-price">Итого: 790&nbsp;<span class="popover__total-price-sign">₽</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- popover для пустой корзины: открытие и закрытие аналогично popover для корзины с товарами -->
+            <div class="user-menu__popover user-menu__popover--empty popover different-padding">
+              <div class="popover__content">
+                <p class="popover__title">Ваша корзина пока пуста</p>
+              </div>
+            </div>
+
           </li>
         </ul>
       </nav>
@@ -69,42 +193,51 @@
       <div class="page-main__section carousel">
         <!-- слайдер -->
         <ul class="carousel__list">
-          <!-- первый слайд -->
+          <!-- первый слайд: класс с цветом фона для .page background-pink -->
           <li class="carousel__slide carousel__slide--current">
             <div class="carousel__offer offer">
               <h2 class="offer__title offer__title--size-l">Нежный пломбир с&nbsp;клубничным джемом</h2>
               <div class="offer__text offer__text--size-l">
                 <p class="offer__text-unit offer__text-unit--size-l">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;мо&shy;ло&shy;ка с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
               </div>
+
+              <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
               <a class="offer__button button button--prime" href="#">Заказать</a>
+
             </div>
             <picture class="carousel__img-container">
               <source srcset="img/strawberry_jam@1x.webp 1x, img/strawberry_jam@2x.webp 2x" type="image/webp">
               <img class="carousel__img carousel__img--current product-img" src="img/strawberry_jam@1x.png" srcset="img/strawberry_jam@2x.png 2x" width="306" height="507" alt="Вафельный рожок с шариками клубничного и ванильного мороженого, политого густым клубничным джемом.">
             </picture>
           </li>
-          <!-- второй слайд -->
-          <li class="carousel__slide carousel__slide--inactive carousel__slide--2">
+          <!-- второй слайд: класс с цветом фона для .page background-blue -->
+          <li class="carousel__slide carousel__slide--inactive carousel__slide--next">
             <div class="carousel__offer offer">
               <h2 class="offer__title offer__title--size-l">Сливочное мороженое со&nbsp;вкусом банана</h2>
               <div class="offer__text offer__text--size-l">
                 <p class="offer__text-unit offer__text-unit--size-l">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</p>
               </div>
+
+              <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
               <a class="offer__button button button--prime" href="#">Заказать</a>
+
             </div>
             <picture class="carousel__img-container">
               <source srcset="img/banana@1x.webp 1x, img/banana@2x.webp 2x" type="image/webp">
               <img class="carousel__img product-img" src="img/banana@1x.png" srcset="img/banana@2x.png 2x" width="306" height="507" alt="Вафельный рожок с тремя шариками ванильно-бананого мороженого нежно-жёлтого оттенка.">
             </picture>
           </li>
-          <!-- третий слайд -->
-          <li class="carousel__slide carousel__slide--inactive carousel__slide--3">
+          <!-- третий слайд: класс с цветом фона для .page background-yellow -->
+          <li class="carousel__slide carousel__slide--inactive carousel__slide--prev">
             <div class="carousel__offer offer">
               <h2 class="offer__title offer__title--size-l">Карамельный пломбир с&nbsp;маршмеллоу</h2>
               <div class="offer__text offer__text--size-l">
                 <p class="offer__text-unit offer__text-unit--size-l">Необычный сладкий дессерт с&nbsp;карамельный топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
               </div>
+
+              <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
               <a class="offer__button button button--prime" href="#">Заказать</a>
+
             </div>
             <picture class="carousel__img-container">
               <source srcset="img/caramel@1x.webp 1x, img/caramel@2x.webp 2x" type="image/webp">
@@ -112,49 +245,51 @@
             </picture>
           </li>
         </ul>
-        <button class="carousel__control carousel__control--prev button button--control button--light">
-          <svg class="button__icon button__icon--light" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Предыдущий слайд.">
+        <button class="carousel__control carousel__control--prev button button--control button--light" type="button">
+          <svg class="button__icon button__icon--light" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M9.8 3.8a.66.66 0 10-.94-.94L4.2 7.53a.66.66 0 000 .94l4.67 4.67a.66.66 0 00.94-.94L5.6 8l4.2-4.2z"/>
           </svg>
+          <span class="visually-hidden">Предыдущий слайд.</span>
         </button>
-        <button class="carousel__control carousel__control--next button button--control button--light">
-          <svg class="button__icon button__icon--light" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Следующий слайд.">
+        <button class="carousel__control carousel__control--next button button--control button--light" type="button">
+          <svg class="button__icon button__icon--light" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.14 2.86a.66.66 0 10-.95.95L10.4 8l-4.2 4.2a.67.67 0 00.95.94l4.66-4.67a.66.66 0 000-.94L7.15 2.86z"/>
           </svg>
+          <span class="visually-hidden">Следующий слайд.</span>
         </button>
         <div class="carousel__pagination-and-social-wrapper">
           <!-- pagination -->
           <ol class="carousel__pagination pagination">
-            <li class="pagination__item">
-              <button class="button button--dotes button--current" type="button">
+            <li class="carousel__pagination-item">
+              <button class="carousel__dot button button--dot button--current" type="button">
                 <span class="visually-hidden">Первый слайд.</span>
               </button>
             </li>
-            <li class="pagination__item">
-              <button class="button button--dotes" type="button">
+            <li class="carousel__pagination-item">
+              <button class="carousel__dot button button--dot" type="button">
                 <span class="visually-hidden">Второй слайд.</span>
               </button>
             </li>
-            <li class="pagination__item">
-              <button class="button button--dotes" type="button">
+            <li class="carousel__pagination-item">
+              <button class="carousel__dot button button--dot" type="button">
                 <span class="visually-hidden">Третий слайд.</span>
               </button>
             </li>
           </ol>
           <!-- social -->
           <ul class="carousel__social social">
-            <li class="social__item">
-              <a class="social__link social__link--vk" href="https://vk.com/htmlacademy">
+            <li class="social__item social__item--margin-top">
+              <a class="social__link social__link--vk" href="https://vk.com/htmlacademy" target="_blank">
                 <span class="visually-hidden">Вконтакте.</span>
               </a>
             </li>
-            <li class="social__item">
-              <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+            <li class="social__item social__item--margin-top">
+              <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy" target="_blank">
                 <span class="visually-hidden">Facebook.</span>
               </a>
             </li>
-            <li class="social__item">
-              <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy/">
+            <li class="social__item social__item--margin-top">
+              <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy/" target="_blank">
                 <span class="visually-hidden">Instagram.</span>
               </a>
             </li>
@@ -162,94 +297,128 @@
         </div>
       </div> <!-- закрывает carousel-->
       <section class="page-main__section feature">
-        <h2 class="feature__title">Заказывайте мороженое<br>и получайте подарки!</h2>
+        <h2 class="feature__title">Заказывайте мороженое <br>и получайте подарки!</h2>
         <div class="feature__content">
           <article class="feature__card ad-card ad-card--option-1">
             <div class="ad-card__offer offer">
               <h3 class="offer__title offer__title--size-m">Малинка даром!</h3>
               <div class="offer__text offer__text--size-m">
-                <p class="offer__text-unit offer__text-unit--size-m">При покупке 2&nbsp;кг любого фруктового мороженого, добавим в&nbsp;ваш заказ банку малинового варенья бесплатно.</p>
+                <p class="offer__text-unit offer__text-unit--size-m">При покупке 2&nbsp;кг любого фруктового мороженого добавим в&nbsp;ваш заказ банку малинового варенья бесплатно.</p>
               </div>
+
+              <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
               <a class="offer__button button button--prime" href="#">Хочу подарок</a>
+
             </div>
           </article>
           <article class="feature__card ad-card ad-card--option-2">
             <div class="ad-card__offer offer">
               <h3 class="offer__title offer__title--size-m">Маршмеллоу даром!</h3>
               <div class="offer__text offer__text--size-m">
-                <p class="offer__text-unit offer__text-unit--size-m">При покупке 2&nbsp;кг пломбира, добавим в&nbsp;ваш заказ упаковку нежных зефирок совершенно бесплатно.</p>
+                <p class="offer__text-unit offer__text-unit--size-m">При покупке 2&nbsp;кг пломбира добавим в&nbsp;ваш заказ упаковку нежных<br>зефирок совершенно бесплатно.</p>
               </div>
+
+              <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
               <a class="offer__button button button--prime" href="#">Хочу подарок</a>
+
             </div>
           </article>
         </div>
       </section>
       <section class="page-main__section feature">
-        <h2 class="feature__title">Попробуйте самые популярные<br>вкусы нашего мороженого</h2>
+        <h2 class="feature__title">Попробуйте самые популярные <br>вкусы нашего мороженого</h2>
         <ul class="feature__product-list product-list">
           <li class="product-list__item product-card">
-            <h3 class="product-card__title">Малинка</h3>
-            <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
+            <h3 class="product-card__title">
+              <a class="product-card__link" href="#">Малинка</a>
+            </h3>
+            <p class="product-card__description">
+              <a class="product-card__link" href="#">Сливочное мороженое с&nbsp;малиновым джемом</a>
+            </p>
+            <a class="product-card__link product-card__img-link" href="#" aria-label="Подробнее о мороженом Малинка.">
+              <picture>
+                <source srcset="img/product/raspberry@1x.webp 1x, img/product/raspberry@2x.webp 2x" type="image/webp">
+                <img class="product-card__img product-img" src="img/product/raspberry@1x.jpg" srcset="img/product/raspberry@2x.jpg 2x" width="168" height="168" alt="">
+              </picture>
+            </a>
             <b class="product-card__price">310&nbsp;₽/кг</b>
             <button class="product-card__button button button--iconic button--bright" type="button">
-              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Добавить в корзину.">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31 1.49a.67.67 0 100 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 6.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 15.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
               </svg>
+              <span class="visually-hidden">Добавить в корзину.</span>
             </button>
-            <picture class="product-card__img-container">
-              <source srcset="img/product/raspberry@1x.webp 1x, img/product/raspberry@2x.webp 2x" type="image/webp">
-              <img class="product-card__img" src="img/product/raspberry@1x.png" srcset="img/product/raspberry@2x.png 2x" width="168" height="168" alt="">
-            </picture>
           </li>
           <li class="product-list__item product-card">
-            <h3 class="product-card__title">Фисташка</h3>
-            <p class="product-card__description">Фисташковый пломбир с&nbsp;кусочками шоколада</p>
+            <h3 class="product-card__title">
+              <a class="product-card__link" href="#">Фисташка</a>
+            </h3>
+            <p class="product-card__description">
+              <a class="product-card__link" href="#">Фисташковый пломбир с&nbsp;кусочками шоколада</a>
+            </p>
+            <a class="product-card__link product-card__img-link" href="#" aria-label="Подробнее о мороженом Фисташка.">
+              <picture class="product-card__img-container">
+                <source srcset="img/product/pistachio@1x.webp 1x, img/product/pistachio@2x.webp 2x" type="image/webp">
+                <img class="product-card__img product-img" src="img/product/pistachio@1x.jpg" srcset="img/product/pistachio@2x.jpg 2x" width="168" height="168" alt="">
+              </picture>
+            </a>
             <b class="product-card__price">340&nbsp;₽/кг</b>
             <button class="product-card__button button button--iconic button--bright" type="button">
-              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Добавить в корзину.">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31 1.49a.67.67 0 100 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 6.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 15.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
               </svg>
+              <span class="visually-hidden">Добавить в корзину.</span>
             </button>
-            <picture class="product-card__img-container">
-              <source srcset="img/product/pistachio@1x.webp 1x, img/product/pistachio@2x.webp 2x" type="image/webp">
-              <img class="product-card__img" src="img/product/pistachio@1x.png" srcset="img/product/pistachio@2x.png 2x" width="168" height="168" alt="">
-            </picture>
           </li>
           <li class="product-list__item product-card">
-            <h3 class="product-card__title">Черника</h3>
-            <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
+            <h3 class="product-card__title">
+              <a class="product-card__link" href="#">Черника</a>
+            </h3>
+            <p class="product-card__description">
+              <a class="product-card__link" href="#">Крем-брюле с&nbsp;черничным джемом</a>
+            </p>
+            <a class="product-card__link product-card__img-link" href="#" aria-label="Подробнее о мороженом Черника.">
+              <picture class="product-card__img-container">
+                <source srcset="img/product/blueberry@1x.webp 1x, img/product/blueberry@2x.webp 2x" type="image/webp">
+                <img class="product-card__img product-img" src="img/product/blueberry@1x.jpg" srcset="img/product/blueberry@2x.jpg 2x" width="168" height="168" alt="">
+             </picture>
+             </a>
             <b class="product-card__price">330&nbsp;₽/кг</b>
             <button class="product-card__button button button--iconic button--bright" type="button">
-              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Добавить в корзину.">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31 1.49a.67.67 0 100 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 6.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 15.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
               </svg>
+              <span class="visually-hidden">Добавить в корзину.</span>
             </button>
-            <picture class="product-card__img-container">
-              <source srcset="img/product/blueberry@1x.webp 1x, img/product/blueberry@2x.webp 2x" type="image/webp">
-              <img class="product-card__img" src="img/product/blueberry@1x.png" srcset="img/product/blueberry@2x.png 2x" width="168" height="168" alt="">
-            </picture>
           </li>
           <li class="product-list__item product-card">
-            <h3 class="product-card__title">Бабл-гам</h3>
-            <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
+            <h3 class="product-card__title">
+              <a class="product-card__link" href="#">Бабл-гам</a>
+            </h3>
+            <p class="product-card__description">
+              <a class="product-card__link" href="#">Ванильный пломбир со&nbsp;сладкой посыпкой</a>
+            </p>
+            <a class="product-card__link product-card__img-link" href="#" aria-label="Подробнее о мороженом Бабл-гам.">
+              <picture class="product-card__img-container">
+                <source srcset="img/product/bubble@1x.webp 1x, img/product/bubble@2x.webp 2x" type="image/webp">
+                <img class="product-card__img product-img" src="img/product/bubble@1x.jpg" srcset="img/product/bubble@2x.jpg 2x" width="168" height="168" alt="">
+              </picture>
+            </a>
             <b class="product-card__price">320&nbsp;₽/кг</b>
             <button class="product-card__button button button--iconic button--bright" type="button">
-              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Добавить в корзину.">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31.49a.67.67 0 000 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 5.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 14.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
+              <svg class="button__icon button__icon--light" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31 1.49a.67.67 0 100 1.33h2.06l.54 2.7.01.05 1.1 5.44a1.97 1.97 0 001.96 1.6h6.32a1.97 1.97 0 001.96-1.6l1.05-5.47a.67.67 0 00-.66-.8H5.12l-.55-2.71a.67.67 0 00-.65-.54h-2.6zm5.01 9.26L5.4 6.08h9.46l-.9 4.68a.64.64 0 01-.63.5H6.96a.64.64 0 01-.64-.5zM5.21 15.2a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0zm7.17 0a1.32 1.32 0 112.64 0 1.32 1.32 0 01-2.64 0z"/>
               </svg>
+              <span class="visually-hidden">Добавить в корзину.</span>
             </button>
-            <picture class="product-card__img-container">
-              <source srcset="img/product/bubble@1x.webp 1x, img/product/bubble@2x.webp 2x" type="image/webp">
-              <img class="product-card__img" src="img/product/bubble@1x.png" srcset="img/product/bubble@2x.png 2x" width="168" height="168" alt="">
-            </picture>
           </li>
         </ul>
       </section>
       <section class="page-main__section feature feature--accent">
-          <h2 class="feature__title">Магазин Глэйси – это онлайн и офлайн-магазин по продаже мороженого собственного проиводства на развес</h2>
+          <h2 class="feature__title">Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного проиводства на развес</h2>
           <ul class="feature__list">
             <li class="feature__list-item">
-              <p class="feature__text-unit feature__text-unit--with-icon feature__text-unit-with-icon-1">Все наше мороженое изгатавливается на&nbsp;собственном производстве, с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</p>
+              <p class="feature__text-unit feature__text-unit--with-icon feature__text-unit-with-icon-1">Всё наше мороженое изготавливается на&nbsp;собственном производстве с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</p>
             </li>
             <li class="feature__list-item">
               <p class="feature__text-unit feature__text-unit--with-icon feature__text-unit-with-icon-2">Закупка ингредиентов производится только у&nbsp;проверенных фермерских хозяйств, с&nbsp;которыми<br>нас связывает долговременное сотрудничество.</p>
@@ -262,15 +431,16 @@
             </li>
           </ul>
       </section>
-      <aside class="page-main__section feature">
+      <aside class="page-main__aside feature">
         <h2 class="visually-hidden">Блог Gllacy Shop</h2>
         <div class="feature__content">
           <section class="feature__card post-card post-card--post-1">
-             <!-- По макету у "Новое в нашем блоге" line-height 20px вместо 22px. Если будет заметна разница, скорректирую-->
-            <p class="post-card__text-unit">Новое в&nbsp;нашем блоге</p>
-            <a class="post-card__title-link" href="#">
-              <h3 class="post-card__title">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</h3>
-            </a>
+            <p class="post-card__text-unit post-card__text-unit--tight">Новое в&nbsp;нашем блоге</p>
+            <h3 class="post-card__title">
+              <a class="post-card__link" href="#">
+                10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу
+              </a>
+            </h3>
           </section>
           <section class="feature__card post-card post-card--accent">
             <h3 class="visually-hidden">Новостная рассылка.</h3>
@@ -279,50 +449,71 @@
               <form class="post-card__form subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
                 <label class="visually-hidden" for="subscribe-email">Введите свой email.</label>
                 <input class="subscribe-form__field form-field" placeholder="email@example.com" type="email" name="subscribe-email" id="subscribe-email" required>
+
+                <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
                 <button class="button button--accent" type="submit">Отправить</button>
+
               </form>
             </div>
           </section>
         </div>
       </aside>
-      <section class="page-main__section pictorial-section pictorial-section--delivery">
+      <section class="page-main__pictorial pictorial-section pictorial-section--delivery">
         <div class="pictorial-section__text pictorial-section__text--delivery">
           <h2 class="pictorial-section__title pictorial-section__title--delivery">Доставка любимого мороженого на дом</h2>
-          <p class="pictorial-section__text-unit">Хочется полакомиться любимым дессертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом и&nbsp;курьер привезет вам ваш заказ в&nbsp;течение часа!</p>
+          <p class="pictorial-section__text-unit">Хочется полакомиться любимым дессертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом, и&nbsp;курьер привезет вам ваш заказ в&nbsp;течение часа!</p>
         </div>
         <div class="pictorial-section__deal-card deal-card deal-card--delivery">
           <p class="deal-card__text-unit deal-card__text-unit--delivery">Укажите адрес и&nbsp;дату доставки, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заказ.</p>
           <form class="deal-card__form order-form" action="https://echo.htmlacademy.ru/" method="post">
-            <p class="order-form__item order-form__date">
-              <label class="order-form__label" for="order-date">Дата</label>
-              <button class="order-form__info" type="button">
-                <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
-              </button>
-              <input class="order-form__field form-field" placeholder="01.04.2020" type="text" name="order-date" id="order-date" required>
-            </p>
-            <p class="order-form__item order-form__phone">
-              <label class="order-form__label" for="order-phone">Телефон</label>
-              <input class="order-form__field form-field" placeholder="+7 800 999-00-00" type="text" name="order-phone" id="order-phone" required>
-            </p>
-            <p class="order-form__item order-form__address">
-              <label class="order-form__label" for="order-address">Адрес</label>
-              <button class="order-form__info" type="button">
-                <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
-              </button>
-              <input class="order-form__field form-field" placeholder="ул. Большая Конюшенная, 19/8" type="text" name="order-address" id="order-address" required>
-            </p>
+            <div class="order-form__row">
+              <!-- поле формы Дата -->
+              <div class="order-form__label-wrapper order-form__label-wrapper--date">
+                <label class="order-form__label" for="order-date">Дата</label>
+                <button class="order-form__tooltip order-form__tooltip--date tooltip" type="button">
+                  <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
+                  <span class="tooltip__text">Укажите дату доставки</span>
+                </button>
+              </div>
+              <input class="order-form__field order-form__field--date form-field" placeholder="01.04.2020" type="text" name="order-date" id="order-date" required>
+              <!-- при необходимости добавить подпись (как в стайлгайде), используй код ниже
+              <span class="order-form__sign order-form__sign--date">Подпись</span> -->
+
+              <!-- поле формы Телефон -->
+              <div class="order-form__label-wrapper order-form__label-wrapper--phone">
+                <label class="order-form__label" for="order-phone">Телефон</label>
+              </div>
+              <input class="order-form__field order-form__field--phone form-field" placeholder="+7 800 999-00-00" type="text" name="order-phone" id="order-phone" required>
+              <!-- при необходимости добавить подпись (как в стайлгайде), используй код ниже
+              <span class="order-form__sign order-form__sign--phone">Подпись</span> -->
+            </div>
+            <div class="order-form__row">
+              <!-- поле формы Адрес -->
+              <div class="order-form__label-wrapper order-form__label-wrapper--address">
+                <label class="order-form__label" for="order-address">Адрес</label>
+                <button class="order-form__tooltip order-form__tooltip--address tooltip" type="button">
+                  <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
+                  <span class="tooltip__text">Введите название<br>улицы, дома и&nbsp;квартиры</span>
+                </button>
+              </div>
+              <input class="order-form__field order-form__field--address form-field" placeholder="ул. Большая Конюшенная, 19/8" type="text" name="order-address" id="order-address" required>
+              <!-- при необходимости добавить подпись (как в стайлгайде), используй код ниже
+              <span class="order-form__sign order-form__sign--address">Подпись</span> -->
+            </div>
+            <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
             <button class="order-form__button button button--accent" type="submit">Отправить</button>
+
           </form>
          </div>
       </section>
-      <section class="page-main__section pictorial-section pictorial-section--contacts">
+      <section class="page-main__pictorial pictorial-section pictorial-section--contacts">
         <h2 class="visually-hidden">Контакты.</h2>
         <div class="pictorial-section__deal-card deal-card deal-card--contacts">
           <address class="deal-card__address">
             <dl class="deal-card__text">
               <dt class="deal-card__text-unit deal-card__text-unit--contacts">Адрес главного офиса<br/>и&nbsp;офлайн-магазина:</dt>
               <dd class="deal-card__text-unit deal-card__text-unit--contacts">
-                <b class="deal-card__address-text">наб. Реки Карповки, 5 лит П, Санкт-Петербург</b>
+                <b class="deal-card__address-text">наб. реки Карповки,<br>5 лит П, Санкт-Петербург</b>
               </dd>
               <dt class="deal-card__text-unit deal-card__text-unit--contacts">Для заказов по&nbsp;телефону:</dt>
               <dd class="deal-card__text-unit deal-card__text-unit--contacts">
@@ -331,24 +522,27 @@
               </dd>
             </dl>
           </address>
+
+          <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
           <button class="deal-card__button button button--accent" type="button">Форма обратной связи</button>
+
         </div>
        </section>
     </main>
     <footer class="page__footer page-footer container">
         <!-- social -->
       <ul class="page-footer__social social">
-        <li class="social__item">
+        <li class="social__item social__item--margin-bottom">
           <a class="social__link social__link--vk" href="https://vk.com/htmlacademy" target="_blank">
             <span class="visually-hidden">Вконтакте.</span>
           </a>
         </li>
-        <li class="social__item">
+        <li class="social__item social__item--margin-bottom">
           <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy" target="_blank">
             <span class="visually-hidden">Facebook.</span>
           </a>
         </li>
-        <li class="social__item">
+        <li class="social__item social__item--margin-bottom">
           <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy/" target="_blank">
             <span class="visually-hidden">Instagram.</span>
           </a>
@@ -375,5 +569,34 @@
         <p class="page-footer__partner-text">Сделано в <a class="page-footer__partner-link" href="https://htmlacademy.ru/" target="_blank">.html academy</a> &copy;&nbsp;2021</p>
       </div>
     </footer>
+
+    <!-- модальное окно: должно открываться с помощью js нажатием на кнопку "Форма обратной связи" (добавлением класса modal-container--open), закрываться нажатием на кнопку "Закрыть" в верхнем правом углу модального окна -->
+    <div class="modal-container">
+      <div class="modal modal--feedback">
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <section class="modal__content">
+          <p class="modal__title">Мы обязательно ответим вам!</p>
+          <form class="modal__feedback-form feedback-form" action="https://echo.htmlacademy.ru/" method="post">
+            <p class="feedback-form__field-group">
+              <label class="visually-hidden" for="feedback-login">Как вас зовут.</label>
+              <input class="feedback-form__field form-field" type="text" id="feedback-login" name="feedback-login" placeholder="Имя и фамилия" required>
+            </p>
+            <p class="feedback-form__field-group">
+              <label class="visually-hidden" for="feedback-password">E-mail.</label>
+              <input class="feedback-form__field form-field" type="email" id="feedback-password" name="feedback-password" placeholder="email@example.com" required>
+            </p>
+            <p class="feedback-form__field-group">
+              <label class="visually-hidden" for="feedback-text">Текст сообщения.</label>
+              <textarea class="feedback-form__field feedback-form__field--text form-field" id="feedback-text" name="feedback-text" cols="30" rows="10" placeholder="В свободной форме"></textarea>
+            </p>
+            <!-- при ожидании отправки, добавить кнопке класс "spinning" -->
+            <button class="feedback-form__button button button--accent" type="submit">Отправить</button>
+          </form>
+        </section>
+      </div>
+    </div>
+
   </body>
 </html>
