@@ -1799,12 +1799,12 @@
 }
 
 .ad-card--option-1 {
-  background-image: url("../img/free_raspberry@1x.jpg");
+  background-image: url("../img/free-raspberry@1x.jpg");
   background-repeat: no-repeat;
 }
 
 .ad-card--option-2 {
-  background-image: url("../img/free_marshmallow@1x.jpg");
+  background-image: url("../img/free-marshmallow@1x.jpg");
   background-repeat: no-repeat;
 }
 
@@ -1822,7 +1822,7 @@
 }
 
 .post-card--post-1 {
-  background-image: url("../img/fruit_sorbet@1x.jpg");
+  background-image: url("../img/fruit-sorbet@1x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1929,7 +1929,7 @@
 .pictorial-section--contacts {
   min-height: 492px;
 
-  background-image: url("../img/icecream_cones@1x.jpg");
+  background-image: url("../img/icecream-cones@1x.jpg");
   background-repeat: no-repeat;
 }
 
